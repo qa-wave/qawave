@@ -1,11 +1,17 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 const RECIPIENT = process.env.CONTACT_EMAIL ?? "tomas.mertin@gmail.com";
 
-function getResend() {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error("RESEND_API_KEY is not configured");
-  return new Resend(key);
+function getTransport() {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST ?? "smtp.porkbun.com",
+    port: Number(process.env.SMTP_PORT ?? 587),
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
 }
 
 interface ContactPayload {
@@ -22,7 +28,6 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactPayload;
 
-    // Basic validation
     if (!body.name || !body.email || !body.company) {
       return Response.json(
         { error: "Name, email, and company are required." },
@@ -30,7 +35,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Build email HTML
     const html = `
       <h2>New Discovery Call Request</h2>
       <table style="border-collapse:collapse;width:100%;max-width:600px">
@@ -46,34 +50,25 @@ export async function POST(request: Request) {
       <p style="color:#999;font-size:12px">Sent from qawave.ai contact form</p>
     `;
 
-    const resend = getResend();
-    const { data, error } = await resend.emails.send({
-      from: "qawave.ai <onboarding@resend.dev>",
-      to: [RECIPIENT],
+    const transport = getTransport();
+    await transport.sendMail({
+      from: process.env.SMTP_USER,
+      to: RECIPIENT,
       replyTo: body.email,
       subject: `Discovery Call Request — ${body.name} (${body.company})`,
       html,
     });
 
-    if (error) {
-      console.error("Resend error:", error);
-      return Response.json(
-        { error: "Failed to send email." },
-        { status: 500 },
-      );
-    }
-
-    return Response.json({ success: true, id: data?.id });
+    return Response.json({ success: true });
   } catch (err) {
     console.error("Contact API error:", err);
     return Response.json(
-      { error: "Internal server error." },
+      { error: "Failed to send email." },
       { status: 500 },
     );
   }
 }
 
-/** Escape HTML entities to prevent XSS in email */
 function esc(str: string): string {
   return str
     .replace(/&/g, "&amp;")
