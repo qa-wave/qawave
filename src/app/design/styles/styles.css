@@ -1,0 +1,194 @@
+/* ============================================================
+   /design/styles route — preset-specific decorations.
+   Scoped via .qa-style-* on the showcase root so they cannot
+   leak into other routes.
+   ============================================================ */
+
+/* ---- Gradient: animated mesh ---- */
+.qa-gradient-mesh {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.45), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.4), transparent 50%),
+    radial-gradient(circle at 60% 80%, rgba(249, 115, 22, 0.35), transparent 55%);
+  filter: blur(60px);
+  animation: qa-mesh-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes qa-mesh-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-3%, 2%, 0) scale(1.08);
+  }
+}
+
+/* ---- Glass: floating orbs ---- */
+.qa-glass-orbs::before,
+.qa-glass-orbs::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+.qa-glass-orbs::before {
+  top: -10%;
+  left: -5%;
+  height: 320px;
+  width: 320px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.55), transparent 70%);
+  animation: qa-orb-drift-a 22s ease-in-out infinite alternate;
+}
+
+.qa-glass-orbs::after {
+  bottom: -10%;
+  right: 0;
+  height: 380px;
+  width: 380px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.45), transparent 70%);
+  animation: qa-orb-drift-b 26s ease-in-out infinite alternate;
+}
+
+@keyframes qa-orb-drift-a {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 60px);
+  }
+}
+
+@keyframes qa-orb-drift-b {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -40px);
+  }
+}
+
+.qa-style-glass [class*="bg-[var(--ds-surface)]"],
+.qa-style-glass .group {
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+/* ---- Neon: grid + scanline ---- */
+.qa-neon-grid {
+  background-image:
+    linear-gradient(rgba(217, 70, 239, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.10) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 80%);
+}
+
+.qa-style-neon h1 {
+  letter-spacing: 0.01em;
+}
+
+.qa-style-neon::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0) 3px,
+    rgba(217, 70, 239, 0.04) 3px,
+    rgba(217, 70, 239, 0.04) 4px
+  );
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* ---- Aurora: layered moving mesh ---- */
+.qa-aurora-mesh {
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(20, 184, 166, 0.45), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 25%, rgba(34, 211, 238, 0.4), transparent 60%),
+    radial-gradient(ellipse 65% 50% at 50% 90%, rgba(56, 189, 248, 0.3), transparent 65%);
+  filter: blur(40px);
+  animation: qa-aurora-shift 14s ease-in-out infinite alternate;
+}
+
+@keyframes qa-aurora-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(2%, -1%, 0);
+    opacity: 1;
+  }
+}
+
+/* ---- Warm: paper texture + subtle vignette ---- */
+.qa-style-warm {
+  background-image:
+    radial-gradient(ellipse 90% 80% at 50% 0%, rgba(194, 65, 12, 0.07), transparent 65%);
+}
+
+.qa-style-warm h1,
+.qa-style-warm h2,
+.qa-style-warm h3 {
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.015em;
+}
+
+/* ---- Ocean: layered waves ---- */
+.qa-ocean-waves {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(14, 165, 233, 0.35), transparent 65%),
+    radial-gradient(ellipse 50% 30% at 30% 0%, rgba(56, 189, 248, 0.25), transparent 60%);
+  filter: blur(20px);
+  animation: qa-ocean-drift 16s ease-in-out infinite alternate;
+}
+
+@keyframes qa-ocean-drift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2%);
+  }
+}
+
+/* ---- Minimal: thin top rule ---- */
+.qa-style-minimal {
+  border-top: 4px solid #000;
+}
+
+/* ---- Brutalist: tightening typography ---- */
+.qa-style-brutalist h1,
+.qa-style-brutalist h2,
+.qa-style-brutalist h3 {
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.qa-style-brutalist {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.04) 0,
+      rgba(0, 0, 0, 0.04) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+}
+
+/* ---- Reduced motion: kill drift animations ---- */
+@media (prefers-reduced-motion: reduce) {
+  .qa-gradient-mesh,
+  .qa-glass-orbs::before,
+  .qa-glass-orbs::after,
+  .qa-aurora-mesh,
+  .qa-ocean-waves {
+    animation: none;
+  }
+}
