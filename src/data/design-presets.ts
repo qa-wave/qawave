@@ -9,12 +9,12 @@ export type PresetId =
   | "gradient"
   | "glass"
   | "dark"
-  | "neon"
+  | "vapor"
   | "aurora"
-  | "warm"
+  | "forest"
   | "ocean"
-  | "minimal"
-  | "brutalist";
+  | "steel"
+  | "cosmic";
 
 export interface DesignPreset {
   id: PresetId;
@@ -168,37 +168,29 @@ export const PRESETS: DesignPreset[] = [
     },
   },
 
-  // 5. Neon — cyberpunk terminal
+  // 5. Vapor — soft synthwave pastel
   {
-    id: "neon",
-    label: "Neon",
-    swatch: "#a855f7",
-    scheme: "dark",
+    id: "vapor",
+    label: "Vapor",
+    swatch: "#ec4899",
+    scheme: "light",
     vars: {
-      "--ds-bg": "#06000d",
-      "--ds-surface": "#0d0220",
-      "--ds-surface-2": "#170535",
-      "--ds-text": "#e9d5ff",
-      "--ds-text-muted": "rgba(233,213,255,0.68)",
-      "--ds-border": "rgba(168,85,247,0.30)",
-      "--ds-border-strong": "rgba(217,70,239,0.6)",
-      "--ds-accent": "#d946ef",
-      "--ds-accent-2": "#22d3ee",
-      "--ds-accent-soft": "rgba(217,70,239,0.18)",
-      "--ds-radius": "0.5rem",
+      "--ds-bg": "#fdf4ff",
+      "--ds-surface": "rgba(255,255,255,0.65)",
+      "--ds-surface-2": "rgba(255,255,255,0.85)",
+      "--ds-text": "#4c1d95",
+      "--ds-text-muted": "rgba(76,29,149,0.66)",
+      "--ds-border": "rgba(236,72,153,0.18)",
+      "--ds-border-strong": "rgba(236,72,153,0.40)",
+      "--ds-accent": "#ec4899",
+      "--ds-accent-2": "#06b6d4",
+      "--ds-accent-soft": "rgba(236,72,153,0.14)",
+      "--ds-radius": "1.25rem",
     },
-    rootClass: "bg-[var(--ds-bg)] text-[var(--ds-text)]",
-    bodyClass: "qa-style-neon font-mono",
-    heroDecorClass: "qa-neon-grid",
-    fontFamily: "var(--font-geist-mono), ui-monospace, monospace",
-    componentClass: {
-      headline:
-        "[text-shadow:0_0_24px_rgba(217,70,239,0.6),0_0_48px_rgba(217,70,239,0.3)]",
-      pillarCard:
-        "shadow-[0_0_24px_rgba(217,70,239,0.15),inset_0_0_24px_rgba(34,211,238,0.06)]",
-      primaryButton:
-        "shadow-[0_0_24px_rgba(217,70,239,0.6)] hover:shadow-[0_0_36px_rgba(217,70,239,0.85)]",
-    },
+    rootClass:
+      "text-[var(--ds-text)] bg-[linear-gradient(180deg,#fef3c7_0%,#fbcfe8_30%,#c7d2fe_70%,#a5f3fc_100%)]",
+    bodyClass: "qa-style-vapor",
+    heroDecorClass: "qa-vapor-horizon",
   },
 
   // 6. Aurora — dark teal + green/blue mesh
@@ -225,30 +217,28 @@ export const PRESETS: DesignPreset[] = [
     heroDecorClass: "qa-aurora-mesh",
   },
 
-  // 7. Warm — cream + terracotta editorial
+  // 7. Forest — deep emerald nature
   {
-    id: "warm",
-    label: "Warm",
-    swatch: "#c2410c",
-    scheme: "light",
+    id: "forest",
+    label: "Forest",
+    swatch: "#10b981",
+    scheme: "dark",
     vars: {
-      "--ds-bg": "#faf6ef",
-      "--ds-surface": "#f5e8d8",
-      "--ds-surface-2": "#ecdcc4",
-      "--ds-text": "#2a1810",
-      "--ds-text-muted": "rgba(42,24,16,0.68)",
-      "--ds-border": "rgba(42,24,16,0.14)",
-      "--ds-border-strong": "rgba(194,65,12,0.35)",
-      "--ds-accent": "#c2410c",
-      "--ds-accent-2": "#a16207",
-      "--ds-accent-soft": "rgba(194,65,12,0.12)",
-      "--ds-radius": "0.5rem",
+      "--ds-bg": "#0a1f12",
+      "--ds-surface": "#102a1a",
+      "--ds-surface-2": "#163b25",
+      "--ds-text": "#d1fae5",
+      "--ds-text-muted": "rgba(209,250,229,0.66)",
+      "--ds-border": "rgba(16,185,129,0.18)",
+      "--ds-border-strong": "rgba(132,204,22,0.40)",
+      "--ds-accent": "#10b981",
+      "--ds-accent-2": "#84cc16",
+      "--ds-accent-soft": "rgba(16,185,129,0.14)",
+      "--ds-radius": "1.25rem",
     },
     rootClass: "bg-[var(--ds-bg)] text-[var(--ds-text)]",
-    bodyClass: "qa-style-warm",
-    headlineSerif: true,
-    fontFamily:
-      "var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif",
+    bodyClass: "qa-style-forest",
+    heroDecorClass: "qa-forest-mist",
   },
 
   // 8. Ocean — deep blue
@@ -276,67 +266,54 @@ export const PRESETS: DesignPreset[] = [
     heroDecorClass: "qa-ocean-waves",
   },
 
-  // 9. Minimal — pure Swiss
+  // 9. Steel — industrial gunmetal blueprint
   {
-    id: "minimal",
-    label: "Minimal",
-    swatch: "#000000",
-    scheme: "light",
+    id: "steel",
+    label: "Steel",
+    swatch: "#3b82f6",
+    scheme: "dark",
     vars: {
-      "--ds-bg": "#ffffff",
-      "--ds-surface": "#ffffff",
-      "--ds-surface-2": "#fafafa",
-      "--ds-text": "#000000",
-      "--ds-text-muted": "rgba(0,0,0,0.55)",
-      "--ds-border": "rgba(0,0,0,0.14)",
-      "--ds-border-strong": "#000000",
-      "--ds-accent": "#000000",
-      "--ds-accent-2": "#404040",
-      "--ds-accent-soft": "rgba(0,0,0,0.04)",
-      "--ds-radius": "0px",
+      "--ds-bg": "#1a1d24",
+      "--ds-surface": "#232831",
+      "--ds-surface-2": "#2d333f",
+      "--ds-text": "#e2e8f0",
+      "--ds-text-muted": "rgba(226,232,240,0.62)",
+      "--ds-border": "rgba(148,163,184,0.16)",
+      "--ds-border-strong": "rgba(59,130,246,0.45)",
+      "--ds-accent": "#3b82f6",
+      "--ds-accent-2": "#94a3b8",
+      "--ds-accent-soft": "rgba(59,130,246,0.14)",
+      "--ds-radius": "0.5rem",
     },
-    rootClass: "bg-[var(--ds-bg)] text-[var(--ds-text)]",
-    bodyClass: "qa-style-minimal",
-    componentClass: {
-      pillarCard: "shadow-none",
-      primaryButton:
-        "bg-black text-white hover:bg-neutral-800 shadow-none rounded-none",
-      secondaryButton: "rounded-none",
-    },
+    rootClass:
+      "text-[var(--ds-text)] bg-[linear-gradient(180deg,#1a1d24_0%,#232831_100%)]",
+    bodyClass: "qa-style-steel",
+    heroDecorClass: "qa-steel-blueprint",
   },
 
-  // 10. Brutalist — yellow + black
+  // 10. Cosmic — deep space + nebula
   {
-    id: "brutalist",
-    label: "Brutalist",
-    swatch: "#fef200",
-    scheme: "light",
+    id: "cosmic",
+    label: "Cosmic",
+    swatch: "#a855f7",
+    scheme: "dark",
     vars: {
-      "--ds-bg": "#fef200",
-      "--ds-surface": "#ffffff",
-      "--ds-surface-2": "#ffffff",
-      "--ds-text": "#000000",
-      "--ds-text-muted": "rgba(0,0,0,0.78)",
-      "--ds-border": "#000000",
-      "--ds-border-strong": "#000000",
-      "--ds-accent": "#ff0080",
-      "--ds-accent-2": "#000000",
-      "--ds-accent-soft": "#fef200",
-      "--ds-radius": "0px",
+      "--ds-bg": "#0a0118",
+      "--ds-surface": "rgba(168,85,247,0.06)",
+      "--ds-surface-2": "rgba(168,85,247,0.10)",
+      "--ds-text": "#ede9fe",
+      "--ds-text-muted": "rgba(237,233,254,0.66)",
+      "--ds-border": "rgba(168,85,247,0.20)",
+      "--ds-border-strong": "rgba(192,132,252,0.45)",
+      "--ds-accent": "#a855f7",
+      "--ds-accent-2": "#22d3ee",
+      "--ds-accent-soft": "rgba(168,85,247,0.18)",
+      "--ds-radius": "1.5rem",
     },
-    rootClass: "bg-[var(--ds-bg)] text-[var(--ds-text)]",
-    bodyClass: "qa-style-brutalist font-mono",
-    fontFamily: "var(--font-geist-mono), ui-monospace, monospace",
-    headlineTransform: "uppercase",
-    componentClass: {
-      pillarCard:
-        "border-[3px] border-black shadow-[8px_8px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0_0_#000] rounded-none",
-      primaryButton:
-        "bg-black text-[#fef200] border-[3px] border-black shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] rounded-none uppercase tracking-tight",
-      secondaryButton:
-        "border-[3px] border-black bg-white text-black hover:bg-[#ff0080] hover:text-white rounded-none uppercase tracking-tight",
-      pillarIcon: "border-[3px] border-black rounded-none bg-[#ff0080] text-white",
-    },
+    rootClass:
+      "text-[var(--ds-text)] bg-[radial-gradient(ellipse_at_top,#1a0938_0%,#0a0118_60%)]",
+    bodyClass: "qa-style-cosmic",
+    heroDecorClass: "qa-cosmic-nebula",
   },
 ];
 

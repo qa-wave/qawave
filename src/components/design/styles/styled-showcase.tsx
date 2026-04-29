@@ -348,44 +348,6 @@ function SecondaryCta({
 /* ------------------------------------------------------------------ */
 
 function PresetVisual({ preset }: { preset: DesignPreset }) {
-  if (preset.id === "brutalist") {
-    return (
-      <div className="relative grid h-[360px] w-[360px] grid-cols-2 grid-rows-2 gap-3">
-        <div className="flex items-center justify-center border-[3px] border-black bg-white text-7xl font-bold shadow-[8px_8px_0_0_#000]">
-          74%
-        </div>
-        <div className="flex items-center justify-center border-[3px] border-black bg-[#ff0080] text-3xl font-bold uppercase tracking-tight text-white shadow-[8px_8px_0_0_#000]">
-          Edge
-        </div>
-        <div className="col-span-2 flex items-center justify-center border-[3px] border-black bg-black text-2xl font-bold uppercase tracking-tight text-[#fef200] shadow-[8px_8px_0_0_#000]">
-          Agentic QA
-        </div>
-      </div>
-    );
-  }
-
-  if (preset.id === "minimal") {
-    return (
-      <div className="relative h-[360px] w-[360px]">
-        <div className="absolute left-0 top-1/2 h-px w-full bg-black" />
-        <div className="absolute left-1/2 top-0 h-full w-px bg-black" />
-        <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
-        <span className="absolute left-1/2 top-2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-black/60">
-          Coverage
-        </span>
-        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-black/60">
-          Risk
-        </span>
-        <span className="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90 text-xs uppercase tracking-[0.3em] text-black/60">
-          Speed
-        </span>
-        <span className="absolute right-2 top-1/2 -translate-y-1/2 rotate-90 text-xs uppercase tracking-[0.3em] text-black/60">
-          Edge
-        </span>
-      </div>
-    );
-  }
-
   return <NetworkGraph preset={preset} />;
 }
 
