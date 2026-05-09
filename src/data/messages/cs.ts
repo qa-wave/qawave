@@ -32,9 +32,7 @@ export const cs: Messages = {
     links: [
       { label: "Produkt", href: "/product" },
       { label: "Zákazníci", href: "/customers" },
-      { label: "Dokumentace", href: "/docs" },
       { label: "Blog", href: "/blog" },
-      { label: "Changelog", href: "/changelog" },
     ],
     cta: { label: "Domluvit hovor", href: "/book" },
     languageSwitcher: {
@@ -333,8 +331,6 @@ export const cs: Messages = {
         title: "Produkt",
         links: [
           { label: "Funkce", href: "/product" },
-          { label: "Dokumentace", href: "/docs" },
-          { label: "Changelog", href: "/changelog" },
           { label: "Integrace", href: "/product#integrations" },
         ],
       },

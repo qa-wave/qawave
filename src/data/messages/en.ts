@@ -31,9 +31,7 @@ export const en: Messages = {
     links: [
       { label: "Product", href: "/product" },
       { label: "Customers", href: "/customers" },
-      { label: "Docs", href: "/docs" },
       { label: "Blog", href: "/blog" },
-      { label: "Changelog", href: "/changelog" },
     ],
     cta: { label: "Book a call", href: "/book" },
     languageSwitcher: {
@@ -330,8 +328,6 @@ export const en: Messages = {
         title: "Product",
         links: [
           { label: "Features", href: "/product" },
-          { label: "Docs", href: "/docs" },
-          { label: "Changelog", href: "/changelog" },
           { label: "Integrations", href: "/product#integrations" },
         ],
       },
