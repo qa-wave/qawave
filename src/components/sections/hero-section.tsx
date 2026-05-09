@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { heroTextReveal } from "@/lib/motion";
@@ -148,9 +147,6 @@ function NetworkGraph() {
 
 export function HeroSection() {
   const t = useTranslations("hero");
-  const [mounted, setMounted] = useState(false);
-  const reduced = useReducedMotion();
-  useEffect(() => setMounted(true), []);
 
   return (
     <section
@@ -177,7 +173,7 @@ export function HeroSection() {
           <motion.div
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted && !reduced ? "visible" : "hidden"}
+            animate="visible"
             custom={0}
             className="mb-6"
           >
@@ -187,7 +183,7 @@ export function HeroSection() {
           <motion.h1
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted && !reduced ? "visible" : "hidden"}
+            animate="visible"
             custom={0.15}
             className="text-5xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
@@ -197,7 +193,7 @@ export function HeroSection() {
           <motion.p
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted && !reduced ? "visible" : "hidden"}
+            animate="visible"
             custom={0.3}
             className="mt-6 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg"
           >
@@ -207,7 +203,7 @@ export function HeroSection() {
           <motion.div
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted && !reduced ? "visible" : "hidden"}
+            animate="visible"
             custom={0.45}
             className="mt-8 flex flex-col gap-4 sm:flex-row"
           >
@@ -222,7 +218,7 @@ export function HeroSection() {
           <motion.p
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted && !reduced ? "visible" : "hidden"}
+            animate="visible"
             custom={0.6}
             className="mt-8 max-w-md text-sm text-neutral-500"
           >
@@ -231,7 +227,7 @@ export function HeroSection() {
         </div>
 
         <div className="hidden items-center justify-center lg:flex">
-          {mounted && <NetworkGraph />}
+          <NetworkGraph />
         </div>
       </div>
 
