@@ -368,4 +368,501 @@ export const cs: Messages = {
     copyright: "© 2026 QAWave s.r.o. · Made in Prague · Postaveno na AI",
     legalNote: "IČO / DIČ CZ01234567",
   },
+
+  // ----------------------------------------------------------
+  // Product page
+  // ----------------------------------------------------------
+  productPage: {
+    headline: "AI agenti, kteří skutečně dodají testy.",
+    subheadline:
+      "Žádné record-replay. Žádné screenshoty. Skutečný, udržovatelný test kód — generovaný, opravovaný a orchestrovaný AI, schválený vašimi inženýry.",
+    capabilities: {
+      title: "Tři schopnosti. Jedna architektura agentů.",
+      items: [
+        {
+          icon: "Sparkles",
+          title: "Generate",
+          body: "Z user stories, produkčního trafficu nebo PR diffs naši agenti píší Playwright / Cypress / API testy, které přežijí refactor a projdou vaším review.",
+          details: [
+            "Čtou váš codebase, chápou záměr, píší testy podle vašich vzorů",
+            "Podpora Playwright, Cypress, Jest i vlastních API frameworků",
+            "Každý vygenerovaný test prochází vaším stávajícím review procesem",
+            "Cílí na netestované cesty jako první — maximalizují pokrytí na test",
+          ],
+        },
+        {
+          icon: "HeartPulse",
+          title: "Heal",
+          body: "Selector drift, timing races, test data churn — agenti chytají regrese, navrhují fixy a mergují je, když je CI zelené.",
+          details: [
+            "Chápou záměr testu, ne jen selektory — opravují na správné úrovni",
+            "Navrhují patche jako PR — vaši SDETs schvalují, nebabysitují",
+            "Sledují vzorce flakiness napříč běhy a identifikují systémové problémy",
+            "Snižují false-positive CI selhání, která blokují váš deploy pipeline",
+          ],
+        },
+        {
+          icon: "Target",
+          title: "Triage",
+          body: "Když CI selže, Bug Triager agent analyzuje logy, traces a diffy a navrhne root cause i assignee — do 90 sekund.",
+          details: [
+            "Koreluje selhání testů s nedávnými commity a změnami infrastruktury",
+            "Navrhuje root cause a automaticky přiřazuje správnému inženýrovi",
+            "Učí se z minulých řešení a zlepšuje přesnost v čase",
+            "Integrace se Slack, Jira, Linear pro okamžité notifikace",
+          ],
+        },
+      ],
+    },
+    integrations: {
+      title: "Funguje s vaším stackem.",
+      subtitle:
+        "Naši agenti se napojí na vaši stávající CI/CD a testovací infrastrukturu. Žádný rip-and-replace.",
+      categories: [
+        {
+          name: "CI/CD",
+          items: [
+            "GitHub Actions",
+            "GitLab CI",
+            "Jenkins",
+            "CircleCI",
+            "Azure DevOps",
+          ],
+        },
+        {
+          name: "Test frameworky",
+          items: ["Playwright", "Cypress", "Jest", "Vitest", "pytest"],
+        },
+        {
+          name: "Jazyky",
+          items: [
+            "TypeScript",
+            "JavaScript",
+            "Python",
+            "Java",
+            "Go",
+            "C#",
+          ],
+        },
+        {
+          name: "Issue tracking",
+          items: ["Jira", "Linear", "GitHub Issues", "Azure Boards"],
+        },
+      ],
+    },
+    cta: { label: "Domluvit 20minutový hovor", href: "/book" },
+  },
+
+  // ----------------------------------------------------------
+  // About page
+  // ----------------------------------------------------------
+  aboutPage: {
+    headline: "Jeden zakladatel. Čtyřicet agentů.",
+    founderStory: [
+      "Jsem Tomas. Přes 10 let v software engineeringu — shippování produktů, rozbíjení buildů a sledování, jak QA týmy tonou v údržbě, zatímco dev velocity kolem nich zrychluje.",
+      "V roce 2025 jsem začal stavět AI agenty pro své vlastní QA workflow. Fungovalo to. Pak jsem postavil agenty na řízení celé firmy — sales, marketing, code review, zákaznická podpora. To fungovalo taky.",
+      "QAWave je výsledek: studio, které staví vlastní AI agenty pro váš QA tým, poháněné stejnou agentní architekturou, na které běží naše vlastní firma. We eat our own dog food.",
+      "Sídlo v Praze. Sloužíme engineering týmům po celé Evropě a v USA.",
+    ],
+    mission: {
+      title: "Proč tohle existuje.",
+      body: "Engineering týmy shippují rychleji než kdykoli dřív. QA nestíhá se skripty a manuálními procesy. Odpovědí není víc lidí — jsou to agenti, kteří rozumí vašemu codebase, vašim vzorům a vašemu quality baru. My ty agenty stavíme.",
+    },
+    values: [
+      {
+        title: "Upřímnost jako default",
+        body: "Žádné vymyšlené metriky. Žádné falešné case studies. Když nemáme data, řekneme to. Naše sekce s testimonials je prázdná, dokud ji nezaplní skutečný zákazník.",
+      },
+      {
+        title: "Code-first, vždy",
+        body: "Každý test, který naši agenti vygenerují, je skutečný, přezkoumatelný kód ve vašem repozitáři. Žádné proprietární formáty, žádný vendor lock-in, žádné black boxy.",
+      },
+      {
+        title: "Agenti zesilují, nenahrazují",
+        body: "Vaši SDETs jsou cenní. Přesuneme je od údržby frameworků ke strategii testování. Rutinní práci přeberou agenti.",
+      },
+    ],
+    cta: { label: "Domluvit hovor", href: "/book" },
+  },
+
+  // ----------------------------------------------------------
+  // Customers page
+  // ----------------------------------------------------------
+  customersPage: {
+    headline: "Zákazníci",
+    subheadline:
+      "Engineering týmy, které důvěřují agentům QAWave ve svém CI/CD.",
+    emptyState: {
+      title: "Design partner pipeline se formuje.",
+      body: "Aktivně jednáme s engineering týmy po celé Evropě. Žádná falešná loga, žádné vymyšlené case studies. Až náš první design partner shipne, jeho příběh bude tady — s jeho svolením.",
+    },
+    designPartner: {
+      title: "Staňte se design partnerem.",
+      benefits: [
+        "4týdenní Design Sprint za zvýhodněných podmínek",
+        "Přímý přístup k zakladateli po celou dobu spolupráce",
+        "Ovlivněte architekturu agentů pro váš stack",
+        "Publikovaná case study (pokud chcete) s plnou redakční kontrolou",
+        "Přednostní přístup k novým schopnostem agentů",
+      ],
+    },
+    cta: { label: "Přihlásit se jako design partner", href: "/book" },
+  },
+
+  // ----------------------------------------------------------
+  // Careers page
+  // ----------------------------------------------------------
+  careersPage: {
+    headline: "Zaměstnáváme 0 lidí.",
+    subheadline: "A tady je proč.",
+    body: [
+      "QAWave řídí jeden člověk a 40 AI agentů. Není to personální omezení — je to architektonické rozhodnutí.",
+      "Každá funkce, která by tradičně vyžadovala zaměstnance — psaní obsahu, code review, zákaznický outreach, doručování testů, kvalifikace leadů — je v rukou specializovaného agenta s vlastními prompty, přístupy k nástrojům a eval baselinami.",
+      "Tohle je náš moat a zároveň proof of concept. Pokud naše agentní architektura zvládne řídit B2B firmu s reálnými zákazníky a reálnými quality bary, zvládne řídit i váš QA tým.",
+      "Nerekrutujeme. Ale vždy hledáme design partnery, kteří chtějí vidět, co dokáže 40 agentů pro jejich engineering tým.",
+    ],
+    agentRoles: [
+      {
+        title: "Content Marketer Agent",
+        body: "Plánuje obsahový kalendář, řídí distribuci napříč kanály, sleduje engagement metriky.",
+      },
+      {
+        title: "Copywriter Agent",
+        body: "Píše landing copy, emailové sekvence a reklamy v češtině i angličtině.",
+      },
+      {
+        title: "Code Reviewer Agent",
+        body: "Kontroluje každou TSX/TS změnu z hlediska výkonu, přístupnosti a idiomatického React 19.",
+      },
+      {
+        title: "SEO Specialist Agent",
+        body: "Keyword research a on-page optimalizace pro QA + AI testing termíny na CZ i EN trhu.",
+      },
+      {
+        title: "Competitive Analyst Agent",
+        body: "Sleduje Applitools, Mabl, QA Wolf, Functionize, TestRigor. Aktualizuje diferenciační matici.",
+      },
+      {
+        title: "QA Expert Agent",
+        body: "Validuje technické claimy, pomáhá s thought leadership obsahem a přesností case studies.",
+      },
+    ],
+    cta: { label: "Staňte se raději design partnerem", href: "/book" },
+  },
+
+  // ----------------------------------------------------------
+  // Book page
+  // ----------------------------------------------------------
+  bookPage: {
+    headline: "Domluvte si 20minutový discovery hovor.",
+    subheadline:
+      "Žádná prodejní prezentace. Žádné demo na toy aplikaci. Jen váš QA problém, přímý pohled na věc a zjištění, jestli jsme pro vás vhodní.",
+    expectations: [
+      {
+        icon: "Clock",
+        title: "20 minut, maximálně",
+        body: "Respektujeme váš kalendář. Pokud potřebujeme víc času, domluvíme follow-up.",
+      },
+      {
+        icon: "MessageSquare",
+        title: "Nejdřív vaše problémy",
+        body: "Zeptáme se na váš stack, bolesti s test suite a co jste zkoušeli. Pak vám upřímně řekneme, jestli vám můžeme pomoct.",
+      },
+      {
+        icon: "FileText",
+        title: "Žádné závazky",
+        body: "Žádné smlouvy, žádné commitments. Pokud je match, společně navrhneme Design Sprint.",
+      },
+    ],
+    contact: {
+      title: "Raději email?",
+      email: "hello@qawave.ai",
+      note: "Obvykle odpovídáme do 4 hodin během CET pracovní doby.",
+    },
+    cta: { label: "Napsat email", href: "mailto:hello@qawave.ai" },
+  },
+
+  // ----------------------------------------------------------
+  // Blog page
+  // ----------------------------------------------------------
+  blogPage: {
+    headline: "Blog",
+    subheadline:
+      "Technické deep-dives o agentním QA, AI testování a řízení firmy na 40 agentech.",
+    emptyState:
+      "První články se připravují. Odebírejte newsletter, ať vám nic neunikne.",
+  },
+
+  // ----------------------------------------------------------
+  // Legal pages
+  // ----------------------------------------------------------
+  legal: {
+    terms: {
+      title: "Podmínky užití",
+      lastUpdated: "9. května 2026",
+      intro:
+        "Tyto Podmínky užití upravují vaše využívání služeb QAWave poskytovaných společností QAWave s.r.o.",
+      sections: [
+        {
+          heading: "1. Služby",
+          body: [
+            "QAWave poskytuje služby vývoje, nasazení a údržby vlastních AI agentů pro zajištění kvality softwaru. Služby jsou dodávány na základě individuálních popisů práce (SOW) dohodnutých mezi QAWave a zákazníkem.",
+            "Všechny služby jsou poskytovány tak, jak jsou. Úrovně služeb, dodávky a termíny jsou definovány v příslušném SOW.",
+          ],
+        },
+        {
+          heading: "2. Duševní vlastnictví",
+          body: [
+            "Veškerý testovací kód vygenerovaný agenty QAWave je commitován do repozitáře zákazníka a je vlastnictvím zákazníka. QAWave si zachovává vlastnictví své agentní architektury, promptů, eval harnesů a proprietárního toolingu.",
+            "Zákazníci udělují QAWave přístup ke svému codebase výhradně za účelem dodání dohodnutých služeb. Tento přístup je kdykoli odvolatelný.",
+          ],
+        },
+        {
+          heading: "3. Platební podmínky",
+          body: [
+            "Poplatky za Design Sprint jsou fakturovány předem. Poplatky za implementaci jsou fakturovány po milnících dle SOW. Poplatky za Continuous Ops jsou fakturovány měsíčně předem.",
+            "Všechny faktury jsou splatné do 30 dnů od vystavení. Pozdní platby nesou úrok 1,5 % měsíčně.",
+          ],
+        },
+        {
+          heading: "4. Refundační politika",
+          body: [
+            "Design Sprint zahrnuje garanci vrácení peněz: pokud je projektovaný ROI vypočtený ve finální zprávě nižší než 3×, celý poplatek je vrácen do 30 dnů.",
+            "Za dokončenou práci se jiné refundace neposkytují.",
+          ],
+        },
+        {
+          heading: "5. Omezení odpovědnosti",
+          body: [
+            "Celková odpovědnost QAWave dle jakéhokoli SOW nepřesáhne poplatky zaplacené zákazníkem za příslušné období spolupráce.",
+            "QAWave neodpovídá za nepřímé, následné nebo náhodné škody, včetně ušlého zisku nebo dat.",
+          ],
+        },
+        {
+          heading: "6. Ukončení",
+          body: [
+            "Kterákoli strana může ukončit Continuous Ops spolupráci s 30denní písemnou výpovědí. Design Sprint a implementační spolupráce se řídí podmínkami příslušného SOW.",
+            "Po ukončení QAWave poskytne přechodový plán a zajistí, že veškerý vygenerovaný testovací kód a konfigurace jsou přístupné v repozitáři zákazníka.",
+          ],
+        },
+        {
+          heading: "7. Rozhodné právo",
+          body: [
+            "Tyto podmínky se řídí právem České republiky. Veškeré spory budou řešeny příslušnými soudy v Praze.",
+          ],
+        },
+      ],
+    },
+
+    privacy: {
+      title: "Ochrana soukromí",
+      lastUpdated: "9. května 2026",
+      intro:
+        "QAWave s.r.o. se zavazuje chránit vaše soukromí. Tato politika popisuje, jak shromažďujeme, používáme a chráníme vaše osobní údaje v souladu s GDPR.",
+      sections: [
+        {
+          heading: "1. Správce údajů",
+          body: [
+            "QAWave s.r.o., registrovaná v České republice. Kontakt: privacy@qawave.ai.",
+          ],
+        },
+        {
+          heading: "2. Jaké údaje shromažďujeme",
+          body: [
+            "Kontaktní údaje: jméno, emailová adresa, název firmy, pracovní pozice — poskytnuté při rezervaci hovoru, přihlášení k newsletteru nebo kontaktování.",
+            "Údaje o užívání: anonymizovaná analytika o interakci s qawave.ai, sbíraná prostřednictvím analytiky respektující soukromí.",
+            "Zákaznická data: přístup ke zdrojovému kódu a CI/CD logům je zpracováván výhradně pro dodání smluvních služeb a není ukládán po skončení spolupráce.",
+          ],
+        },
+        {
+          heading: "3. Jak vaše údaje používáme",
+          body: [
+            "K dodání smluvních QA služeb. K odpovědi na dotazy a plánování hovorů. K zasílání newsletteru (s výslovným souhlasem, odhlášení kdykoli). K vylepšení našeho webu a služeb.",
+          ],
+        },
+        {
+          heading: "4. Ukládání a bezpečnost dat",
+          body: [
+            "Všechna data jsou hostována v EU (Frankfurt, Německo) na infrastruktuře Vercel a Supabase. Používáme šifrování při přenosu (TLS 1.3) i v klidu (AES-256). Přístup k zákaznickým datům je omezen pouze na autorizovaný personál.",
+          ],
+        },
+        {
+          heading: "5. Vaše práva",
+          body: [
+            "Dle GDPR máte právo na: přístup k osobním údajům, opravu nebo výmaz, vznesení námitky, přenositelnost dat a podání stížnosti u Úřadu pro ochranu osobních údajů (ÚOOÚ).",
+            "K uplatnění těchto práv kontaktujte privacy@qawave.ai.",
+          ],
+        },
+        {
+          heading: "6. Doba uchování",
+          body: [
+            "Kontaktní údaje: po dobu obchodního vztahu plus 3 roky. Zákaznická data: smazána do 90 dnů od ukončení spolupráce, pokud není dohodnuto jinak. Newsletter: do odhlášení.",
+          ],
+        },
+        {
+          heading: "7. Cookies",
+          body: [
+            "qawave.ai používá pouze nezbytné cookies pro fungování webu. Nepoužíváme sledovací cookies ani cookies třetích stran pro reklamu.",
+          ],
+        },
+      ],
+    },
+
+    dpa: {
+      title: "Smlouva o zpracování dat",
+      lastUpdated: "9. května 2026",
+      intro:
+        "Tato Smlouva o zpracování dat (DPA) je součástí smlouvy o poskytování služeb mezi QAWave s.r.o. (Zpracovatel) a zákazníkem (Správce).",
+      sections: [
+        {
+          heading: "1. Rozsah zpracování",
+          body: [
+            "QAWave zpracovává zákaznická data výhradně za účelem dodání smluvních služeb QA agentů. Zpracovatelské činnosti zahrnují: čtení zdrojového kódu pro generování testů, analýzu CI/CD logů pro triage a přístup k testovacím prostředím pro validaci výstupů agentů.",
+          ],
+        },
+        {
+          heading: "2. Sub-zpracovatelé",
+          body: [
+            "QAWave využívá omezený počet sub-zpracovatelů, uvedených na qawave.ai/legal/subprocessors. Zákazníci budou informováni 30 dní před přidáním nového sub-zpracovatele.",
+          ],
+        },
+        {
+          heading: "3. Bezpečnostní opatření",
+          body: [
+            "Všechna data jsou šifrována při přenosu i v klidu. Přístup je omezen na bázi need-to-know. QAWave udržuje postupy reakce na bezpečnostní incidenty a oznámí zákazníkovi do 72 hodin jakékoli potvrzené narušení dat.",
+          ],
+        },
+        {
+          heading: "4. Přenos dat",
+          body: [
+            "Veškeré zpracování probíhá v rámci EU (Frankfurt, Německo). Pokud by jakékoli zpracování vyžadovalo přenos mimo EU, QAWave zajistí odpovídající záruky (Standardní smluvní doložky).",
+          ],
+        },
+        {
+          heading: "5. Právo auditu",
+          body: [
+            "Zákazníci mohou auditovat soulad QAWave s touto DPA po přiměřeném upozornění. QAWave poskytne veškerou potřebnou dokumentaci a přístup k prokázání souladu.",
+          ],
+        },
+        {
+          heading: "6. Výmaz dat",
+          body: [
+            "Po ukončení smlouvy o poskytování služeb QAWave smaže všechna zákaznická data do 90 dnů, pokud jejich uchování nevyžaduje zákon. Zákazníci mohou kdykoli požádat o dřívější výmaz.",
+          ],
+        },
+      ],
+    },
+
+    subprocessors: {
+      title: "Sub-zpracovatelé",
+      lastUpdated: "9. května 2026",
+      intro:
+        "QAWave využívá následující sub-zpracovatele k dodání služeb. Tento seznam je aktualizován při změnách. Zákazníci jsou informováni 30 dní před přidáním nového sub-zpracovatele.",
+      sections: [
+        {
+          heading: "Infrastruktura",
+          body: [
+            "Vercel Inc. — Hosting aplikací a edge síť. Lokace: EU (Frankfurt). Účel: hosting webu a aplikací.",
+            "Supabase Inc. — Databáze a autentizace. Lokace: EU (Frankfurt). Účel: ukládání dat.",
+            "Cloudflare Inc. — CDN a DDoS ochrana. Lokace: Globální (data zpracovávána v EU). Účel: bezpečnost a výkon trafficu.",
+          ],
+        },
+        {
+          heading: "AI poskytovatelé",
+          body: [
+            "Anthropic PBC — Poskytovatel AI modelu (Claude). Lokace: USA (data zpracovávána dle DPA, nulové ukládání dat). Účel: pohon QA agentů.",
+          ],
+        },
+        {
+          heading: "Obchodní operace",
+          body: [
+            "Stripe Inc. — Zpracování plateb. Lokace: EU. Účel: fakturace a inkaso.",
+            "Porkbun LLC — Doručování emailů (SMTP). Lokace: USA. Účel: transakční email.",
+          ],
+        },
+      ],
+    },
+
+    aiTransparency: {
+      title: "Transparentnost AI",
+      lastUpdated: "9. května 2026",
+      intro:
+        "V souladu s EU AI Act QAWave zveřejňuje následující informace o našem využití AI systémů.",
+      sections: [
+        {
+          heading: "Používané AI systémy",
+          body: [
+            "QAWave nasazuje specializované AI agenty pro zajištění kvality softwaru. Tito agenti využívají velké jazykové modely (primárně Anthropic Claude) ke generování testovacího kódu, analýze selhání testů a navrhování oprav.",
+            "Naši agenti jsou klasifikováni jako AI systémy s omezeným rizikem dle EU AI Act. Asistují lidským inženýrům — veškeré výstupy agentů vyžadují lidskou kontrolu a schválení před sloučením do produkčního kódu.",
+          ],
+        },
+        {
+          heading: "Lidský dohled",
+          body: [
+            "Každý výstup agenta podléhá lidské kontrole. Vygenerované testy jsou předloženy jako pull requesty ke schválení inženýrem. Navržené opravy jsou přezkoumány před sloučením. Návrhy triage jsou poradní — o odpovědi rozhodují inženýři.",
+            "Zákazníci si zachovávají plnou kontrolu nad tím, které akce agentů jsou automatizované versus vyžadující schválení.",
+          ],
+        },
+        {
+          heading: "AI-generovaný obsah na tomto webu",
+          body: [
+            "Části obsahu tohoto webu byly navrženy nebo upřesněny s asistencí AI. Veškerý publikovaný obsah je před zveřejněním přezkoumán a schválen člověkem.",
+            "Dle článku 50 EU AI Act toto zveřejnění splňuje požadavek transparentnosti pro AI-generovaný obsah v komerční komunikaci.",
+          ],
+        },
+        {
+          heading: "Data a trénink",
+          body: [
+            "QAWave netrénuje AI modely. Používáme komerčně dostupné modely (Anthropic Claude) prostřednictvím jejich API. Zákaznický kód a data nejsou nikdy použity k tréninku modelů třetích stran. Na všechny API interakce se vztahuje politika nulového ukládání dat společnosti Anthropic.",
+          ],
+        },
+        {
+          heading: "Kontakt",
+          body: [
+            "Pro otázky o našich AI praktikách: ai@qawave.ai. Pro obecné dotazy ohledně soukromí: privacy@qawave.ai.",
+          ],
+        },
+      ],
+    },
+
+    security: {
+      title: "Bezpečnost",
+      lastUpdated: "9. května 2026",
+      intro:
+        "QAWave bere bezpečnost vašeho kódu a dat vážně. Zde je, jak je chráníme.",
+      sections: [
+        {
+          heading: "Bezpečnost infrastruktury",
+          body: [
+            "Všechny služby jsou hostovány v EU (Frankfurt, Německo) na infrastruktuře Vercel a Supabase. Data jsou šifrována při přenosu (TLS 1.3) i v klidu (AES-256). Naši poskytovatelé infrastruktury udržují certifikaci SOC 2 Type II.",
+          ],
+        },
+        {
+          heading: "Řízení přístupu",
+          body: [
+            "Přístup k zákaznickému kódu je omezen na minimum nutné pro dodání služeb. Přístupové údaje jsou pravidelně obměňovány. Veškerý přístup je logován a auditovatelný. Členové týmu používají hardwarové bezpečnostní klíče pro autentizaci.",
+          ],
+        },
+        {
+          heading: "Bezpečnost agentů",
+          body: [
+            "Agenti QAWave operují v rámci vašeho CI/CD prostředí — nekopírují váš kód do externích systémů. Výstupy agentů (vygenerované testy, návrhy oprav) jsou commitovány přímo do vašeho repozitáře standardními Git workflow.",
+            "Každá akce agenta je logována s plným audit trailem: co bylo přečteno, co bylo vygenerováno, co bylo navrženo. Tento log je přístupný zákazníkům.",
+          ],
+        },
+        {
+          heading: "Compliance",
+          body: [
+            "GDPR splněno od prvního dne — data hostovaná v EU, DPA k dispozici na vyžádání. SOC 2 Type I certifikace probíhá (cíl Q3 2026). Požadavky EU AI Act splněny. Compliance dokumentace je k dispozici zájemcům pod NDA.",
+          ],
+        },
+        {
+          heading: "Hlášení zranitelností",
+          body: [
+            "Pokud objevíte bezpečnostní zranitelnost v systémech QAWave, nahlaste ji na security@qawave.ai. Zavazujeme se potvrdit přijetí hlášení do 24 hodin a poskytovat aktualizace o postupu nápravy.",
+          ],
+        },
+      ],
+    },
+  },
 };

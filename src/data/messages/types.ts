@@ -163,6 +163,99 @@ export interface FooterMessages {
 }
 
 // -------------------------------------------------------
+// Page types — subpages linked from nav / footer
+// -------------------------------------------------------
+
+export interface ProductCapability {
+  icon: string;
+  title: string;
+  body: string;
+  details: string[];
+}
+
+export interface IntegrationCategory {
+  name: string;
+  items: string[];
+}
+
+export interface ProductPageMessages {
+  headline: string;
+  subheadline: string;
+  capabilities: {
+    title: string;
+    items: [ProductCapability, ProductCapability, ProductCapability];
+  };
+  integrations: {
+    title: string;
+    subtitle: string;
+    categories: IntegrationCategory[];
+  };
+  cta: CtaLink;
+}
+
+export interface AboutPageMessages {
+  headline: string;
+  founderStory: string[];
+  mission: { title: string; body: string };
+  values: Array<{ title: string; body: string }>;
+  cta: CtaLink;
+}
+
+export interface CustomersPageMessages {
+  headline: string;
+  subheadline: string;
+  emptyState: { title: string; body: string };
+  designPartner: {
+    title: string;
+    benefits: string[];
+  };
+  cta: CtaLink;
+}
+
+export interface CareersPageMessages {
+  headline: string;
+  subheadline: string;
+  body: string[];
+  agentRoles: Array<{ title: string; body: string }>;
+  cta: CtaLink;
+}
+
+export interface BookPageMessages {
+  headline: string;
+  subheadline: string;
+  expectations: Array<{ icon: string; title: string; body: string }>;
+  contact: { title: string; email: string; note: string };
+  cta: CtaLink;
+}
+
+export interface BlogPageMessages {
+  headline: string;
+  subheadline: string;
+  emptyState: string;
+}
+
+export interface LegalSection {
+  heading: string;
+  body: string[];
+}
+
+export interface LegalDocument {
+  title: string;
+  lastUpdated: string;
+  intro: string;
+  sections: LegalSection[];
+}
+
+export interface LegalMessages {
+  terms: LegalDocument;
+  privacy: LegalDocument;
+  dpa: LegalDocument;
+  subprocessors: LegalDocument;
+  aiTransparency: LegalDocument;
+  security: LegalDocument;
+}
+
+// -------------------------------------------------------
 // Root type — must be satisfied by both en.ts and cs.ts
 // -------------------------------------------------------
 
@@ -180,4 +273,12 @@ export interface Messages {
   faq: FaqMessages;
   finalCta: FinalCtaMessages;
   footer: FooterMessages;
+  // Subpages
+  productPage: ProductPageMessages;
+  aboutPage: AboutPageMessages;
+  customersPage: CustomersPageMessages;
+  careersPage: CareersPageMessages;
+  bookPage: BookPageMessages;
+  blogPage: BlogPageMessages;
+  legal: LegalMessages;
 }
