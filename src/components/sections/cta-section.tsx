@@ -24,8 +24,7 @@ export function CtaSection() {
       <motion.div
         variants={fadeInUp}
         
-        whileInView="visible" 
-        viewport={{ once: true, amount: 0.1 }}
+        animate="visible" 
         className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8"
       >
         <h2

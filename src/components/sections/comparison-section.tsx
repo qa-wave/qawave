@@ -48,8 +48,7 @@ export function ComparisonSection() {
           id="comparison-heading"
           variants={fadeInUp}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           {t("headline")}
@@ -58,8 +57,7 @@ export function ComparisonSection() {
         <motion.div
           variants={fadeInUp}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
           className="mx-auto mt-14 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-surface/60 md:mt-20"
         >
           <table className="w-full min-w-[640px] text-left">

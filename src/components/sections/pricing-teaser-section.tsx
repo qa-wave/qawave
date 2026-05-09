@@ -34,8 +34,7 @@ export function PricingTeaserSection() {
           id="pricing-heading"
           variants={fadeInUp}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           {t("headline")}
@@ -44,8 +43,7 @@ export function PricingTeaserSection() {
         <motion.ul
           variants={staggerContainer(0.15)}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
           className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >
           {tiers.map((tier, i) => {

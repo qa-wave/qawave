@@ -28,8 +28,7 @@ export function AgenticMoatSection() {
         <motion.div
           variants={fadeInUp}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
         >
           <h2
             id="agentic-moat-heading"

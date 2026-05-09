@@ -38,8 +38,7 @@ export function HowItWorksSection() {
         <motion.div
           variants={fadeInUp}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
           className="mx-auto max-w-3xl text-center"
         >
           <h2
@@ -56,8 +55,7 @@ export function HowItWorksSection() {
         <motion.ul
           variants={staggerContainer(0.2)}
           
-          whileInView="visible" 
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible" 
           className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >
           {pillars.map((pillar) => {
