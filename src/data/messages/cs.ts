@@ -33,7 +33,6 @@ export const cs: Messages = {
       { label: "Produkt", href: "/product" },
       { label: "Zákazníci", href: "/customers" },
       { label: "Dokumentace", href: "/docs" },
-      { label: "Ceník", href: "/pricing" },
       { label: "Blog", href: "/blog" },
       { label: "Changelog", href: "/changelog" },
     ],
@@ -188,7 +187,11 @@ export const cs: Messages = {
   // ----------------------------------------------------------
   agenticMoat: {
     headline: "Agenty nejen stavíme. Provozujeme na nich celou firmu.",
-    body: "QAWave řídí jeden člověk (Tomas) a 40 AI agentů. Obchodní outreach, marketing, zákaznická podpora, code review, doručování testů — všechno na stejné agentní architektuře, kterou stavíme pro zákazníky.\n\nTo není marketing. Je to důkaz.\n\nPokud naši agenti zvládají řídit B2B firmu s reálnými zákazníky a reálnými quality bary — zvládnou řídit i váš QA tým.",
+    body: [
+      "QAWave řídí jeden člověk (Tomas) a 40 AI agentů. Obchodní outreach, marketing, zákaznická podpora, code review, doručování testů — všechno na stejné agentní architektuře, kterou stavíme pro zákazníky.",
+      "To není marketing. Je to důkaz.",
+      "Pokud naši agenti zvládají řídit B2B firmu s reálnými zákazníky a reálnými quality bary — zvládnou řídit i váš QA tým.",
+    ],
     stat: "40 agentů. 1 zakladatel.",
     cta: {
       label: "Číst: Jak jsem postavil QAWave na 40 agentech",
@@ -330,7 +333,6 @@ export const cs: Messages = {
         title: "Produkt",
         links: [
           { label: "Funkce", href: "/product" },
-          { label: "Ceník", href: "/pricing" },
           { label: "Dokumentace", href: "/docs" },
           { label: "Changelog", href: "/changelog" },
           { label: "Integrace", href: "/product#integrations" },

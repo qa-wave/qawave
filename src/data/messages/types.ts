@@ -100,8 +100,8 @@ export interface ComparisonMessages {
 
 export interface AgenticMoatMessages {
   headline: string;
-  /** Newline-separated paragraphs (\n\n between paragraphs) */
-  body: string;
+  /** Array of paragraphs rendered as separate <p> elements */
+  body: string[];
   /** Displayed in Instrument Serif / display treatment */
   stat: string;
   cta: CtaLink;
@@ -175,7 +175,7 @@ export interface Messages {
   howItWorks: HowItWorksMessages;
   comparison: ComparisonMessages;
   agenticMoat: AgenticMoatMessages;
-  pricing: PricingMessages;
+  pricing?: PricingMessages;
   testimonial: TestimonialMessages;
   faq: FaqMessages;
   finalCta: FinalCtaMessages;

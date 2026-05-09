@@ -5,7 +5,6 @@ import { ProblemSection } from "@/components/sections/problem-section";
 import { HowItWorksSection } from "@/components/sections/how-it-works-section";
 import { ComparisonSection } from "@/components/sections/comparison-section";
 import { AgenticMoatSection } from "@/components/sections/agentic-moat-section";
-import { PricingTeaserSection } from "@/components/sections/pricing-teaser-section";
 import { TestimonialSection } from "@/components/sections/testimonial-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
@@ -26,7 +25,6 @@ export default async function HomePage({
       <HowItWorksSection />
       <ComparisonSection />
       <AgenticMoatSection />
-      <PricingTeaserSection />
       <TestimonialSection />
       <FaqSection />
       <CtaSection />

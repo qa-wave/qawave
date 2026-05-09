@@ -32,7 +32,6 @@ export const en: Messages = {
       { label: "Product", href: "/product" },
       { label: "Customers", href: "/customers" },
       { label: "Docs", href: "/docs" },
-      { label: "Pricing", href: "/pricing" },
       { label: "Blog", href: "/blog" },
       { label: "Changelog", href: "/changelog" },
     ],
@@ -188,7 +187,11 @@ export const en: Messages = {
   // ----------------------------------------------------------
   agenticMoat: {
     headline: "We don't just build agents. We run on them.",
-    body: "QAWave is operated by one human (me, Tomas) and 40 AI agents. Sales outreach, marketing, customer support, code review, test delivery — all powered by the same agent architecture we sell to customers.\n\nThis isn't marketing. It's proof.\n\nIf our agents can run a B2B company with real customers and real quality bars — they can run your QA team too.",
+    body: [
+      "QAWave is operated by one human (me, Tomas) and 40 AI agents. Sales outreach, marketing, customer support, code review, test delivery — all powered by the same agent architecture we sell to customers.",
+      "This isn't marketing. It's proof.",
+      "If our agents can run a B2B company with real customers and real quality bars — they can run your QA team too.",
+    ],
     stat: "40 agents. 1 founder.",
     cta: {
       label: "Read: How I built QAWave on 40 agents",
@@ -327,7 +330,6 @@ export const en: Messages = {
         title: "Product",
         links: [
           { label: "Features", href: "/product" },
-          { label: "Pricing", href: "/pricing" },
           { label: "Docs", href: "/docs" },
           { label: "Changelog", href: "/changelog" },
           { label: "Integrations", href: "/product#integrations" },

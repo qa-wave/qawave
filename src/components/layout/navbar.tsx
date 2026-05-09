@@ -78,6 +78,7 @@ export function Navbar() {
           type="button"
           className="flex h-10 w-10 items-center justify-center rounded-md text-neutral-400 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-accent md:hidden"
           onClick={() => setOpen((p) => !p)}
+          aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

@@ -8,7 +8,7 @@ import { fadeInUp } from "@/lib/motion";
 
 export function AgenticMoatSection() {
   const t = useTranslations("agenticMoat");
-  const paragraphs = t("body").split("\n\n");
+  const paragraphs = t.raw("body") as string[];
 
   return (
     <section

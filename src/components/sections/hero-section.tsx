@@ -2,7 +2,6 @@
 
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { heroTextReveal } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -109,8 +108,8 @@ function NetworkGraph() {
               strokeLinecap="round"
               custom={i}
               variants={edgeLine}
-              
-              animate="visible" 
+              initial="hidden"
+              animate="visible"
             />
           );
         })}
@@ -123,8 +122,8 @@ function NetworkGraph() {
               fill="#0EA5E9"
               custom={node.id}
               variants={pulseGlow}
-              
-              animate="visible" 
+              initial="hidden"
+              animate="visible"
             />
             <motion.circle
               cx={node.cx}
@@ -135,8 +134,8 @@ function NetworkGraph() {
               strokeWidth={2}
               custom={node.id}
               variants={nodeCircle}
-              
-              animate="visible" 
+              initial="hidden"
+              animate="visible"
             />
           </g>
         ))}
@@ -232,10 +231,6 @@ export function HeroSection() {
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      {/* Hide unused Link import warning by keeping the import (used for future linkified parts) */}
-      <span className="hidden">
-        <Link href="/">.</Link>
-      </span>
     </section>
   );
 }
