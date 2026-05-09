@@ -27,8 +27,8 @@ export function AgenticMoatSection() {
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
         >
           <h2

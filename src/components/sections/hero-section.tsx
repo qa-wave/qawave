@@ -109,8 +109,8 @@ function NetworkGraph() {
               strokeLinecap="round"
               custom={i}
               variants={edgeLine}
-              initial="hidden"
-              animate="visible"
+              
+              animate="visible" 
             />
           );
         })}
@@ -123,8 +123,8 @@ function NetworkGraph() {
               fill="#0EA5E9"
               custom={node.id}
               variants={pulseGlow}
-              initial="hidden"
-              animate="visible"
+              
+              animate="visible" 
             />
             <motion.circle
               cx={node.cx}
@@ -135,8 +135,8 @@ function NetworkGraph() {
               strokeWidth={2}
               custom={node.id}
               variants={nodeCircle}
-              initial="hidden"
-              animate="visible"
+              
+              animate="visible" 
             />
           </g>
         ))}
@@ -172,8 +172,8 @@ export function HeroSection() {
         <div>
           <motion.div
             variants={heroTextReveal}
-            initial="hidden"
-            animate="visible"
+            
+            animate="visible" 
             custom={0}
             className="mb-6"
           >
@@ -182,8 +182,8 @@ export function HeroSection() {
 
           <motion.h1
             variants={heroTextReveal}
-            initial="hidden"
-            animate="visible"
+            
+            animate="visible" 
             custom={0.15}
             className="text-5xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
@@ -192,8 +192,8 @@ export function HeroSection() {
 
           <motion.p
             variants={heroTextReveal}
-            initial="hidden"
-            animate="visible"
+            
+            animate="visible" 
             custom={0.3}
             className="mt-6 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg"
           >
@@ -202,8 +202,8 @@ export function HeroSection() {
 
           <motion.div
             variants={heroTextReveal}
-            initial="hidden"
-            animate="visible"
+            
+            animate="visible" 
             custom={0.45}
             className="mt-8 flex flex-col gap-4 sm:flex-row"
           >
@@ -217,8 +217,8 @@ export function HeroSection() {
 
           <motion.p
             variants={heroTextReveal}
-            initial="hidden"
-            animate="visible"
+            
+            animate="visible" 
             custom={0.6}
             className="mt-8 max-w-md text-sm text-neutral-500"
           >

@@ -37,8 +37,8 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
           className="mx-auto max-w-3xl text-center"
         >
@@ -55,8 +55,8 @@ export function HowItWorksSection() {
 
         <motion.ul
           variants={staggerContainer(0.2)}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
           className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >

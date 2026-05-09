@@ -33,8 +33,8 @@ export function PricingTeaserSection() {
         <motion.h2
           id="pricing-heading"
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
@@ -43,8 +43,8 @@ export function PricingTeaserSection() {
 
         <motion.ul
           variants={staggerContainer(0.15)}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
           className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >

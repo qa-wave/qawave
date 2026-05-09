@@ -47,8 +47,8 @@ export function ComparisonSection() {
         <motion.h2
           id="comparison-heading"
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
@@ -57,8 +57,8 @@ export function ComparisonSection() {
 
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
+          
+          whileInView="visible" 
           viewport={{ once: true, amount: 0.1 }}
           className="mx-auto mt-14 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-surface/60 md:mt-20"
         >
