@@ -1,58 +1,88 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { problemData } from "@/data/landing";
+import { Clock, CircleDollarSign, UserX, type LucideIcon } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
-import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { MetricCard } from "@/components/ui/metric-card";
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  Clock,
+  CircleDollarSign,
+  UserX,
+};
+
+interface Stat {
+  icon: string;
+  number: string;
+  unit: string;
+  label: string;
+  supporting: string;
+}
 
 export function ProblemSection() {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <SectionWrapper id="problem">
-        {/* ---- Headline block ---- */}
-        <div className="mx-auto mb-16 max-w-3xl text-center md:mb-20">
-          <motion.h2
-            variants={fadeInUp}
-            className="text-3xl font-bold leading-[1.12] tracking-tight text-foreground md:text-4xl lg:text-5xl"
-          >
-            {problemData.headline}
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="mt-4 text-base leading-relaxed text-neutral-400 md:mt-6 md:text-lg"
-          >
-            {problemData.subheadline}
-          </motion.p>
-        </div>
+  const t = useTranslations("problem");
+  const stats = t.raw("stats") as Stat[];
 
-        {/* ---- Stat cards grid ---- */}
-        <motion.div
-          variants={staggerContainer()}
+  return (
+    <section className="relative py-24 md:py-32 lg:py-40" aria-labelledby="problem-heading">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          id="problem-heading"
+          variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
-          {problemData.stats.map((stat) => (
-            <MetricCard
-              key={stat.label}
-              value={stat.number}
-              numericValue={stat.numericValue}
-              suffix={stat.suffix}
-              label={stat.label}
-              supportingText={stat.supportingText}
-              source={stat.source}
-              sourceUrl={stat.sourceUrl}
-            />
-          ))}
-        </motion.div>
-      </SectionWrapper>
-    </motion.div>
+          {t("headline")}
+        </motion.h2>
+
+        <motion.ul
+          variants={staggerContainer(0.15)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
+        >
+          {stats.map((stat) => {
+            const Icon = ICON_MAP[stat.icon] ?? Clock;
+            return (
+              <motion.li
+                key={stat.label}
+                variants={fadeInUp}
+                className="group rounded-2xl border border-border bg-surface p-6 text-center transition-all duration-300 hover:border-border-accent hover:shadow-[0_0_30px_rgba(14,165,233,0.1)] md:p-8"
+              >
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent-muted text-accent">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <p className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+                  {stat.number}
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
+                  {stat.unit}
+                </p>
+                <p className="mt-4 text-base font-medium text-foreground">
+                  {stat.label}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                  {stat.supporting}
+                </p>
+              </motion.li>
+            );
+          })}
+        </motion.ul>
+
+        <motion.p
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mx-auto mt-14 max-w-2xl text-center text-base leading-relaxed text-neutral-400 md:text-lg"
+        >
+          {t("closingLine")}
+        </motion.p>
+      </div>
+    </section>
   );
 }
 

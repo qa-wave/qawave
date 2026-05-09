@@ -5,6 +5,7 @@
 // ============================================================
 
 export type PresetId =
+  | "wave"
   | "klasik"
   | "gradient"
   | "glass"
@@ -61,7 +62,34 @@ export interface DesignPreset {
 /* ------------------------------------------------------------------ */
 
 export const PRESETS: DesignPreset[] = [
-  // 1. Klasik — current production dark indigo
+  // 1. Wave — brand-canonical dark blue (Deep Ocean + Wave Blue)
+  {
+    id: "wave",
+    label: "Wave",
+    swatch: "#0EA5E9",
+    scheme: "dark",
+    vars: {
+      "--ds-bg": "#0F172A",
+      "--ds-surface": "#1E293B",
+      "--ds-surface-2": "#334155",
+      "--ds-text": "#F8FAFC",
+      "--ds-text-muted": "#94A3B8",
+      "--ds-border": "rgba(255,255,255,0.08)",
+      "--ds-border-strong": "rgba(14,165,233,0.4)",
+      "--ds-accent": "#0EA5E9",
+      "--ds-accent-2": "#06B6D4",
+      "--ds-accent-soft": "rgba(14,165,233,0.15)",
+      "--ds-radius": "1rem",
+    },
+    rootClass: "bg-[var(--ds-bg)] text-[var(--ds-text)]",
+    bodyClass: "qa-style-wave",
+    heroDecorClass: "qa-style-wave-hero",
+    fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+    headlineSerif: false,
+    headlineTransform: "none",
+  },
+
+  // 2. Klasik — legacy production dark indigo (reference)
   {
     id: "klasik",
     label: "Klasik",
@@ -324,4 +352,4 @@ export const PRESET_BY_ID: Record<PresetId, DesignPreset> = Object.fromEntries(
 export const VISIBLE_PRESETS = PRESETS.slice(0, 5);
 export const HIDDEN_PRESETS = PRESETS.slice(5);
 
-export const DEFAULT_PRESET: PresetId = "klasik";
+export const DEFAULT_PRESET: PresetId = "wave";

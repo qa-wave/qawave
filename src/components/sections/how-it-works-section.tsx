@@ -1,114 +1,101 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
-  GitBranch,
-  BrainCircuit,
-  CheckCircle,
-  Search,
-  Wrench,
-  GraduationCap,
+  Sparkles,
+  HeartPulse,
+  Target,
+  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
-import { howItWorksData } from "@/data/landing";
+import { Link } from "@/i18n/navigation";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
-import { cn } from "@/lib/utils";
-import { SectionWrapper } from "@/components/ui/section-wrapper";
-
-/* ------------------------------------------------------------------ */
-/*  Icon map — resolve step icon names to Lucide components            */
-/* ------------------------------------------------------------------ */
 
 const ICON_MAP: Record<string, LucideIcon> = {
-  GitBranch,
-  BrainCircuit,
-  CheckCircle,
-  Search,
-  Wrench,
-  GraduationCap,
+  Sparkles,
+  HeartPulse,
+  Target,
 };
 
-function resolveIcon(name: string): LucideIcon {
-  return ICON_MAP[name] ?? GitBranch;
+interface Pillar {
+  icon: string;
+  emoji: string;
+  title: string;
+  body: string;
 }
 
-/* ------------------------------------------------------------------ */
-/*  How It Works Section                                               */
-/* ------------------------------------------------------------------ */
-
 export function HowItWorksSection() {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <SectionWrapper id="how-it-works">
-        {/* ---- Headline block ---- */}
-        <div className="mb-16 text-center md:mb-20">
-          <motion.h2
-            variants={fadeInUp}
-            className="text-3xl font-bold leading-[1.12] tracking-tight text-foreground md:text-4xl lg:text-5xl"
-          >
-            {howItWorksData.headline}
-          </motion.h2>
-        </div>
+  const t = useTranslations("howItWorks");
+  const pillars = t.raw("pillars") as Pillar[];
 
-        {/* ---- Steps grid ---- */}
+  return (
+    <section
+      className="relative bg-surface/40 py-24 md:py-32 lg:py-40"
+      aria-labelledby="how-it-works-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          variants={staggerContainer()}
+          variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mx-auto max-w-3xl text-center"
         >
-          {/* Connector line (desktop only) */}
-          <div
-            className={cn(
-              "pointer-events-none absolute left-[16%] right-[16%] top-8 hidden h-px md:block",
-              "bg-gradient-to-r from-border via-border-accent to-border"
-            )}
-          />
+          <h2
+            id="how-it-works-heading"
+            className="text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
+          >
+            {t("headline")}
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-neutral-400 md:text-lg">
+            {t("subheadline")}
+          </p>
+        </motion.div>
 
-          {howItWorksData.steps.map((step) => {
-            const Icon = resolveIcon(step.icon);
-
+        <motion.ul
+          variants={staggerContainer(0.2)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
+        >
+          {pillars.map((pillar) => {
+            const Icon = ICON_MAP[pillar.icon] ?? Sparkles;
             return (
-              <motion.div
-                key={step.number}
+              <motion.li
+                key={pillar.title}
                 variants={fadeInUp}
-                className="relative flex flex-col items-center text-center"
+                className="group flex flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-accent hover:shadow-[0_0_40px_rgba(14,165,233,0.12)] md:p-8 lg:p-10"
               >
-                {/* Icon box */}
-                <div
-                  className={cn(
-                    "mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl",
-                    "border border-border-accent bg-accent-muted"
-                  )}
-                >
-                  <Icon className="h-8 w-8 text-accent-light" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-muted text-accent transition-transform duration-300 group-hover:scale-110 md:h-14 md:w-14">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-
-                {/* Step number */}
-                <span className="font-mono text-sm text-accent-light">
-                  {step.number}
-                </span>
-
-                {/* Title */}
-                <h3 className="mt-2 text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl">
-                  {step.title}
+                <h3 className="mt-5 text-xl font-medium tracking-tight text-foreground md:text-2xl">
+                  {pillar.title}
                 </h3>
-
-                {/* Description */}
-                <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-neutral-400 md:text-base">
-                  {step.description}
+                <p className="mt-3 text-sm leading-relaxed text-neutral-400 md:text-base">
+                  {pillar.body}
                 </p>
-              </motion.div>
+              </motion.li>
             );
           })}
-        </motion.div>
-      </SectionWrapper>
-    </motion.div>
+        </motion.ul>
+
+        <div className="mt-12 text-center">
+          <Link
+            href={t("cta.href")}
+            className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-light md:text-base"
+          >
+            {t("cta.label")}
+            <ArrowRight
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 

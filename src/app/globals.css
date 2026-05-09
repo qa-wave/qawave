@@ -1,53 +1,61 @@
 @import "tailwindcss";
 
 /* ============================================================
-   qawave.ai — Global Theme
-   "The Edge of QA Automation"
-   Engineering-Grade Dark Mode
+   QAWave — Global Theme
+   "Ride the AI wave in QA"
+   Wave-blue dark mode (Deep Ocean + Wave Blue + Cyan Crest)
    ============================================================ */
 
 @theme inline {
   /* ---- Typography ---- */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
 
   /* ---- Core palette ---- */
-  --color-background: #050505;
-  --color-foreground: #ededed;
+  --color-background: #0F172A;          /* Deep Ocean — slate-900 */
+  --color-foreground: #F8FAFC;          /* Sea Foam — slate-50 */
 
   /* ---- Neutral scale (slate-tinted) ---- */
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f4f4f5;
-  --color-neutral-200: #e4e4e7;
-  --color-neutral-300: #d4d4d8;
-  --color-neutral-400: #a1a1aa;
-  --color-neutral-500: #71717a;
-  --color-neutral-600: #52525b;
-  --color-neutral-700: #3f3f46;
-  --color-neutral-800: #27272a;
-  --color-neutral-900: #18181b;
-  --color-neutral-950: #0c0c0e;
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-500: #64748B;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1E293B;
+  --color-neutral-900: #0F172A;
+  --color-neutral-950: #020617;
 
-  /* ---- Accent — subtle indigo ---- */
-  --color-accent: #4f46e5;
-  --color-accent-light: #6366f1;
-  --color-accent-dark: #3730a3;
-  --color-accent-muted: rgba(79, 70, 229, 0.15);
-  --color-accent-foreground: #e0e7ff;
+  /* ---- Accent — Wave Blue + Cyan Crest ---- */
+  --color-accent: #0EA5E9;              /* Wave Blue — sky-500 */
+  --color-accent-light: #06B6D4;        /* Cyan Crest — cyan-500 */
+  --color-accent-dark: #0284C7;         /* Wave Blue 600 — sky-600 */
+  --color-accent-muted: rgba(14, 165, 233, 0.15);
+  --color-accent-foreground: #E0F2FE;   /* Sky 100 */
+
+  /* ---- Brand named tokens (semantic) ---- */
+  --color-wave-blue: #0EA5E9;
+  --color-cyan-crest: #06B6D4;
+  --color-deep-ocean: #0F172A;
+  --color-sea-foam: #F8FAFC;
+  --color-ai-purple: #8B5CF6;
 
   /* ---- Semantic ---- */
-  --color-success: #22c55e;
-  --color-warning: #eab308;
-  --color-error: #ef4444;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
 
   /* ---- Surface layers ---- */
-  --color-surface: #0a0a0c;
-  --color-surface-raised: #111113;
-  --color-surface-overlay: #18181b;
+  --color-surface: #1E293B;             /* Slate 800 */
+  --color-surface-raised: #334155;      /* Slate 700 */
+  --color-surface-overlay: #475569;     /* Slate 600 */
 
   /* ---- Border ---- */
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-border-accent: rgba(79, 70, 229, 0.3);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-accent: rgba(14, 165, 233, 0.4);
 }
 
 /* ---- Base resets ---- */

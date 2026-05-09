@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,41 +13,52 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const siteUrl = "https://qawave.ai";
 
 export const metadata: Metadata = {
   title: {
-    default: "qawave.ai — The Edge of QA Automation",
-    template: "%s | qawave.ai",
+    default: "QAWave — Ride the AI wave in QA",
+    template: "%s | QAWave",
   },
   description:
-    "We help engineering teams implement agentic AI testing — from strategy through production. Autonomous coverage, intelligent maintenance, and full governance.",
+    "Custom AI agents that live in your CI/CD. Generate tests, heal flakiness, triage bugs 24/7. Book a 20-min discovery call.",
   keywords: [
-    "agentic testing",
-    "autonomous QA",
     "AI test automation",
-    "QA consulting",
-    "test automation services",
-    "qawave",
-    "AI QA",
-    "software testing",
+    "flaky test detection",
+    "QA agents",
+    "test automation AI",
+    "Claude QA agent",
+    "agentic testing",
+    "QAWave",
   ],
   metadataBase: new URL(siteUrl),
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/en",
+      cs: "/cs",
+    },
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: siteUrl,
-    siteName: "qawave.ai",
-    title: "qawave.ai — The Edge of QA Automation",
+    siteName: "QAWave",
+    title: "QAWave — Ride the AI wave in QA",
     description:
-      "QA automation consulting & implementation. We deploy agentic AI testing that autonomously discovers gaps, adapts to changes, and maintains full audit trails.",
+      "Custom AI agents that live in your CI/CD. Generate tests, heal flakiness, triage bugs 24/7.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "qawave.ai — The Edge of QA Automation",
+    title: "QAWave — Ride the AI wave in QA",
     description:
-      "QA automation consulting & implementation. Agentic AI testing from strategy through production.",
+      "Custom AI agents that live in your CI/CD. Generate tests, heal flakiness, triage bugs 24/7.",
   },
   robots: {
     index: true,
@@ -68,13 +80,13 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "qawave.ai",
+  name: "QAWave",
   description:
-    "QA automation consulting and implementation. We help engineering teams deploy agentic AI testing — from strategy through production.",
+    "Custom AI agents that live in your CI/CD. Generate tests, heal flakiness, triage bugs 24/7.",
   url: siteUrl,
   logo: `${siteUrl}/favicon.svg`,
-  sameAs: ["https://github.com/qa-wave"],
-  serviceType: "QA Automation Consulting",
+  sameAs: ["https://github.com/qawave", "https://x.com/qawave"],
+  serviceType: "AI-native QA Studio",
   areaServed: "Worldwide",
   knowsAbout: [
     "Agentic AI Testing",
@@ -85,15 +97,21 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Detect locale from middleware-set header so /design/* (locale-free)
+  // and /<locale>/* both render with a correct <html lang>.
+  const h = await headers();
+  const headerLocale = h.get("x-next-intl-locale");
+  const lang = headerLocale === "cs" ? "cs" : "en";
+
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      lang={lang}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
       <body>
         <script

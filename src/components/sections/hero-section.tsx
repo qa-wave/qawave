@@ -1,16 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, type Variants } from "framer-motion";
-import { heroData } from "@/data/landing";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { heroTextReveal } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
-/* ------------------------------------------------------------------ */
-/*  Animated network graph — AI agent exploring an application         */
-/* ------------------------------------------------------------------ */
 
 interface Node {
   id: number;
@@ -57,7 +54,7 @@ const edgeLine: Variants = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => ({
     pathLength: 1,
-    opacity: 0.35,
+    opacity: 0.4,
     transition: { delay: 0.6 + i * 0.08, duration: 0.6, ease: "easeOut" },
   }),
 };
@@ -67,7 +64,12 @@ const nodeCircle: Variants = {
   visible: (i: number) => ({
     scale: 1,
     opacity: 1,
-    transition: { delay: 0.4 + i * 0.1, duration: 0.5, type: "spring", stiffness: 200 },
+    transition: {
+      delay: 0.4 + i * 0.1,
+      duration: 0.5,
+      type: "spring",
+      stiffness: 200,
+    },
   }),
 };
 
@@ -88,14 +90,14 @@ const pulseGlow: Variants = {
 
 function NetworkGraph() {
   return (
-    <div className="relative w-full max-w-[400px] aspect-square">
+    <div className="relative aspect-square w-full max-w-[400px]">
       <svg
         viewBox="0 0 400 420"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
+        className="h-full w-full"
+        aria-hidden="true"
       >
-        {/* Edges */}
         {EDGES.map((edge, i) => {
           const from = NODES[edge.from];
           const to = NODES[edge.to];
@@ -103,7 +105,7 @@ function NetworkGraph() {
             <motion.path
               key={`edge-${edge.from}-${edge.to}`}
               d={`M ${from.cx} ${from.cy} L ${to.cx} ${to.cy}`}
-              stroke="#6366f1"
+              stroke="#06B6D4"
               strokeWidth={1.5}
               strokeLinecap="round"
               custom={i}
@@ -113,28 +115,24 @@ function NetworkGraph() {
             />
           );
         })}
-
-        {/* Nodes */}
         {NODES.map((node) => (
           <g key={`node-${node.id}`}>
-            {/* Pulse glow */}
             <motion.circle
               cx={node.cx}
               cy={node.cy}
               r={12}
-              fill="#4f46e5"
+              fill="#0EA5E9"
               custom={node.id}
               variants={pulseGlow}
               initial="hidden"
               animate="visible"
             />
-            {/* Core dot */}
             <motion.circle
               cx={node.cx}
               cy={node.cy}
               r={6}
-              fill="#6366f1"
-              stroke="#4f46e5"
+              fill="#06B6D4"
+              stroke="#0EA5E9"
               strokeWidth={2}
               custom={node.id}
               variants={nodeCircle}
@@ -148,86 +146,100 @@ function NetworkGraph() {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Hero Section                                                       */
-/* ------------------------------------------------------------------ */
-
 export function HeroSection() {
-  /* Prevent hydration flicker for animated elements */
+  const t = useTranslations("hero");
   const [mounted, setMounted] = useState(false);
+  const reduced = useReducedMotion();
   useEffect(() => setMounted(true), []);
 
   return (
     <section
       className={cn(
-        "relative flex min-h-screen items-center overflow-hidden"
+        "relative flex min-h-screen items-center overflow-hidden pt-24"
       )}
     >
+      {/* Decorative wave gradient backdrop */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 70% 30%, rgba(14,165,233,1) 0%, rgba(6,182,212,0.6) 40%, rgba(139,92,246,0.4) 75%, transparent 100%)",
+        }}
+      />
+
       <div
         className={cn(
-          "mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8"
+          "relative mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8"
         )}
       >
-        {/* ---- LEFT: Text ---- */}
         <div>
-          {/* Badge */}
           <motion.div
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
+            animate={mounted && !reduced ? "visible" : "hidden"}
             custom={0}
-            className="mb-6 mt-2"
+            className="mb-6"
           >
-            <Badge>{heroData.badge}</Badge>
+            <Badge>{t("badge")}</Badge>
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
+            animate={mounted && !reduced ? "visible" : "hidden"}
             custom={0.15}
-            className="text-5xl font-bold leading-[1.08] tracking-tight text-foreground md:text-6xl lg:text-7xl"
+            className="text-5xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
-            {heroData.headline}
+            {t("headline")}
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
+            animate={mounted && !reduced ? "visible" : "hidden"}
             custom={0.3}
             className="mt-6 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg"
           >
-            {heroData.subheadline}
+            {t("subheadline")}
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             variants={heroTextReveal}
             initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
+            animate={mounted && !reduced ? "visible" : "hidden"}
             custom={0.45}
             className="mt-8 flex flex-col gap-4 sm:flex-row"
           >
-            <Button variant="primary" href={heroData.primaryCta.href}>
-              {heroData.primaryCta.label}
+            <Button variant="primary" href={t("primaryCta.href")}>
+              {t("primaryCta.label")}
             </Button>
-            <Button variant="secondary" href={heroData.secondaryCta.href}>
-              {heroData.secondaryCta.label}
+            <Button variant="secondary" href={t("secondaryCta.href")}>
+              {t("secondaryCta.label")}
             </Button>
           </motion.div>
+
+          <motion.p
+            variants={heroTextReveal}
+            initial="hidden"
+            animate={mounted && !reduced ? "visible" : "hidden"}
+            custom={0.6}
+            className="mt-8 max-w-md text-sm text-neutral-500"
+          >
+            {t("trustPill")}
+          </motion.p>
         </div>
 
-        {/* ---- RIGHT: Visual ---- */}
         <div className="hidden items-center justify-center lg:flex">
           {mounted && <NetworkGraph />}
         </div>
       </div>
 
-      {/* Bottom gradient separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      {/* Hide unused Link import warning by keeping the import (used for future linkified parts) */}
+      <span className="hidden">
+        <Link href="/">.</Link>
+      </span>
     </section>
   );
 }

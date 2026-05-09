@@ -221,6 +221,55 @@
   }
 }
 
+/* ---- Wave: brand-canonical Deep Ocean + Wave Blue ---- */
+
+/*
+ * Hero gradient mesh backdrop.
+ * Three layered radial blobs:
+ *   - Wave Blue (sky-500) top-right
+ *   - Cyan Crest (cyan-500) bottom-left
+ *   - AI Purple (violet-500) bottom-right
+ * Blurred heavily so they read as a soft colour wash, not distinct orbs.
+ * Slow 30s drift via transform+opacity — compositor-only, no layout.
+ */
+.qa-style-wave-hero {
+  background:
+    radial-gradient(ellipse 65% 55% at 65% 10%, rgba(14, 165, 233, 0.28), transparent 65%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(6, 182, 212, 0.20), transparent 60%),
+    radial-gradient(ellipse 40% 35% at 85% 75%, rgba(139, 92, 246, 0.18), transparent 60%);
+  filter: blur(32px);
+  animation: qa-wave-drift 30s ease-in-out infinite alternate;
+}
+
+@keyframes qa-wave-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-2%, 1.5%, 0) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/*
+ * Root scope: Sea Foam text selection highlight.
+ * Wave Blue at 25% opacity background keeps selection legible at AAA contrast.
+ */
+.qa-style-wave ::selection {
+  background-color: rgba(14, 165, 233, 0.25);
+  color: #F8FAFC;
+}
+
+/*
+ * Subtle cyan inner-glow on card borders on hover.
+ * Applied via CSS custom property driven by --ds-border-strong.
+ * No box-shadow animation here (perf) — handled by Framer Motion ctaPulse for CTA only.
+ */
+.qa-style-wave .group:hover {
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.18), 0 0 24px rgba(14, 165, 233, 0.07);
+}
+
 /* ---- Reduced motion: kill drift animations ---- */
 @media (prefers-reduced-motion: reduce) {
   .qa-gradient-mesh,
@@ -230,7 +279,8 @@
   .qa-ocean-waves,
   .qa-forest-mist,
   .qa-cosmic-nebula,
-  .qa-style-cosmic::before {
+  .qa-style-cosmic::before,
+  .qa-style-wave-hero {
     animation: none;
   }
 }

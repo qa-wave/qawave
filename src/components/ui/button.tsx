@@ -25,8 +25,8 @@ export type ButtonProps = ButtonAsButton | ButtonAsLink;
 const variantStyles: Record<ButtonVariant, string> = {
   primary: cn(
     "bg-accent text-white font-semibold",
-    "shadow-[0_0_20px_rgba(79,70,229,0.3)]",
-    "hover:bg-accent-light hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] hover:scale-[1.03]",
+    "shadow-[0_0_20px_rgba(14,165,233,0.3)]",
+    "hover:bg-accent-light hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] hover:scale-[1.03]",
     "active:scale-[0.98] active:bg-accent-dark",
     "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none",
   ),
