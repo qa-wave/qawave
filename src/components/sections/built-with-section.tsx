@@ -1,5 +1,19 @@
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
+import {
+  AnthropicLogo,
+  VercelLogo,
+  SupabaseLogo,
+  CloudflareLogo,
+  StripeLogo,
+} from "@/components/logos";
+
+const LOGO_MAP: Record<string, React.FC<{ className?: string }>> = {
+  Anthropic: AnthropicLogo,
+  Vercel: VercelLogo,
+  Supabase: SupabaseLogo,
+  Cloudflare: CloudflareLogo,
+  Stripe: StripeLogo,
+};
 
 export function BuiltWithSection() {
   const t = useTranslations("builtWith");
@@ -19,17 +33,23 @@ export function BuiltWithSection() {
           {t("label")}
         </h2>
         <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:gap-x-14">
-          {badges.map((name) => (
-            <li
-              key={name}
-              className={cn(
-                "text-base font-semibold tracking-tight text-neutral-400 transition-colors",
-                "hover:text-foreground"
-              )}
-            >
-              {name}
-            </li>
-          ))}
+          {badges.map((name) => {
+            const Logo = LOGO_MAP[name];
+            return (
+              <li
+                key={name}
+                className="text-neutral-500 transition-colors hover:text-foreground"
+              >
+                {Logo ? (
+                  <Logo className="h-5 w-auto md:h-6" />
+                ) : (
+                  <span className="text-base font-semibold tracking-tight">
+                    {name}
+                  </span>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         {trustedLogos.length > 0 && (
@@ -38,14 +58,23 @@ export function BuiltWithSection() {
               {t("trustedByLabel")}
             </h3>
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-              {trustedLogos.map((name) => (
-                <li
-                  key={name}
-                  className="text-base font-semibold tracking-tight text-foreground"
-                >
-                  {name}
-                </li>
-              ))}
+              {trustedLogos.map((name) => {
+                const Logo = LOGO_MAP[name];
+                return (
+                  <li
+                    key={name}
+                    className="text-foreground"
+                  >
+                    {Logo ? (
+                      <Logo className="h-5 w-auto md:h-6" />
+                    ) : (
+                      <span className="text-base font-semibold tracking-tight">
+                        {name}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
