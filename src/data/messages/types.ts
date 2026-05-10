@@ -224,6 +224,16 @@ export interface BookPageMessages {
   headline: string;
   subheadline: string;
   expectations: Array<{ icon: string; title: string; body: string }>;
+  form: {
+    name: string;
+    email: string;
+    company: string;
+    role: string;
+    message: string;
+    submit: string;
+    success: string;
+    error: string;
+  };
   contact: { title: string; email: string; note: string };
   cta: CtaLink;
 }

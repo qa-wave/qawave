@@ -33,7 +33,7 @@ export const en: Messages = {
       { label: "Customers", href: "/customers" },
       { label: "Blog", href: "/blog" },
     ],
-    cta: { label: "Book a call", href: "/book" },
+    cta: { label: "Book a 20-min call", href: "/book" },
     languageSwitcher: {
       en: "English",
       cs: "Čeština",
@@ -48,8 +48,8 @@ export const en: Messages = {
     headline: "Ride the AI wave in QA.",
     subheadline:
       "We build custom AI agents that live in your CI/CD — generating tests, healing flakiness, and triaging bugs 24/7. For engineering teams that want to spend their time building, not debugging test suites.",
-    primaryCta: { label: "Book 20-min discovery call", href: "/book" },
-    secondaryCta: { label: "Join waitlist", href: "#waitlist" },
+    primaryCta: { label: "Book a 20-min call", href: "/book" },
+    secondaryCta: { label: "See how it works", href: "/product" },
     trustPill:
       "Your code stays yours. Your tests stay yours. We just run the agents.",
   },
@@ -172,7 +172,7 @@ export const en: Messages = {
         values: ["yes", "no", "partial", "no"],
       },
     ],
-    cta: { label: "Read detailed comparison", href: "/comparisons" },
+    cta: { label: "See full product details", href: "/product" },
     legend: { yes: "yes", partial: "partial", no: "no" },
   },
 
@@ -295,8 +295,8 @@ export const en: Messages = {
         a: "You should keep your SDETs — agents amplify them, they don't replace them. Typical outcome: your senior engineers move from framework maintenance to test strategy, architecture, and edge-case coverage. The repetitive work goes to agents.",
       },
       {
-        q: "How much does AI compute actually cost in my pricing?",
-        a: "For a mid-sized engagement, we spend roughly $2–5k/month in model API calls on your behalf. This is included in your tier price — no usage overages, no surprise invoices.",
+        q: "How much does AI compute cost?",
+        a: "For a mid-sized engagement, we spend roughly $2–5k/month in model API calls on your behalf. This is included in your engagement fee — no usage overages, no surprise invoices.",
       },
       {
         q: "Can we start with one agent type, not all three?",
@@ -312,10 +312,10 @@ export const en: Messages = {
     headline: "Ready to stop fighting flaky tests?",
     subheadline:
       "20 minutes. No pitch deck. Just your QA pain, an honest perspective, and whether we're a fit.",
-    primaryCta: { label: "Book discovery call", href: "/book" },
+    primaryCta: { label: "Book a 20-min call", href: "/book" },
     secondaryCta: {
-      label: "Or get the monthly newsletter",
-      href: "/newsletter",
+      label: "Or reach out via email",
+      href: "mailto:hello@qawave.ai",
     },
   },
 
@@ -338,7 +338,6 @@ export const en: Messages = {
           { label: "Blog", href: "/blog" },
           { label: "Customers", href: "/customers" },
           { label: "Careers", href: "/careers" },
-          { label: "Press", href: "/about#press" },
         ],
       },
       {
@@ -447,7 +446,7 @@ export const en: Messages = {
         },
       ],
     },
-    cta: { label: "Book 20-min discovery call", href: "/book" },
+    cta: { label: "Book a 20-min call", href: "/book" },
   },
 
   // ----------------------------------------------------------
@@ -479,7 +478,7 @@ export const en: Messages = {
         body: "Your SDETs are valuable. We move them from framework maintenance to test strategy. The repetitive work goes to agents.",
       },
     ],
-    cta: { label: "Book a conversation", href: "/book" },
+    cta: { label: "Book a 20-min call", href: "/book" },
   },
 
   // ----------------------------------------------------------
@@ -570,12 +569,22 @@ export const en: Messages = {
         body: "No contracts, no commitments. If there's a fit, we'll scope a Design Sprint together.",
       },
     ],
+    form: {
+      name: "Your name",
+      email: "Work email",
+      company: "Company",
+      role: "Your role (optional)",
+      message: "What's your biggest QA challenge right now? (optional)",
+      submit: "Request a call",
+      success: "Sent. We'll get back to you within 4 hours.",
+      error: "Something went wrong. Try emailing us directly.",
+    },
     contact: {
       title: "Prefer email?",
       email: "hello@qawave.ai",
       note: "We typically respond within 4 hours during CET business hours.",
     },
-    cta: { label: "Schedule via email", href: "mailto:hello@qawave.ai" },
+    cta: { label: "hello@qawave.ai", href: "mailto:hello@qawave.ai" },
   },
 
   // ----------------------------------------------------------

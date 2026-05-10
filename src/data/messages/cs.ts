@@ -34,7 +34,7 @@ export const cs: Messages = {
       { label: "Zákazníci", href: "/customers" },
       { label: "Blog", href: "/blog" },
     ],
-    cta: { label: "Domluvit hovor", href: "/book" },
+    cta: { label: "Domluvit 20min hovor", href: "/book" },
     languageSwitcher: {
       en: "English",
       cs: "Čeština",
@@ -51,10 +51,10 @@ export const cs: Messages = {
     subheadline:
       "Stavíme vlastní AI agenty, kteří žijí ve vašem CI/CD — generují testy, léčí flaky a triage bugy 24/7. Pro engineering týmy, které chtějí stavět produkt, ne ladit test suite.",
     primaryCta: {
-      label: "Domluvit 20minutový hovor",
+      label: "Domluvit 20min hovor",
       href: "/book",
     },
-    secondaryCta: { label: "Přidat se na waitlist", href: "#waitlist" },
+    secondaryCta: { label: "Jak to funguje", href: "/product" },
     trustPill:
       "Váš kód je váš. Vaše testy jsou vaše. My jen spouštíme agenty.",
   },
@@ -175,7 +175,7 @@ export const cs: Messages = {
         values: ["yes", "no", "partial", "no"],
       },
     ],
-    cta: { label: "Podrobné srovnání", href: "/comparisons" },
+    cta: { label: "Celý produkt v detailu", href: "/product" },
     legend: { yes: "ano", partial: "částečně", no: "ne" },
   },
 
@@ -297,8 +297,8 @@ export const cs: Messages = {
         a: "Vaše SDETs si nechte — agenti je zesilují, nenahrazují. Typický výsledek: vaši seniorní inženýři přejdou od údržby frameworků ke strategii testování, architektuře a pokrytí edge cases. Rutinní práci přebírají agenti.",
       },
       {
-        q: "Kolik skutečně stojí AI compute v mé ceně?",
-        a: "Pro středně velký engagement utratíme přibližně $2–5k/měsíc za volání modelového API na váš účet. Tato částka je zahrnuta v ceně vašeho tieru — žádné usage overages, žádné překvapení na faktuře.",
+        q: "Kolik stojí AI compute?",
+        a: "Pro středně velký engagement utratíme přibližně $2–5k/měsíc za volání modelového API na váš účet. Tato částka je zahrnuta v ceně spolupráce — žádné usage overages, žádné překvapení na faktuře.",
       },
       {
         q: "Můžeme začít jen s jedním typem agenta, ne se všemi třemi?",
@@ -314,10 +314,10 @@ export const cs: Messages = {
     headline: "Dost bylo bojů s flaky testy?",
     subheadline:
       "20 minut. Bez prodejní prezentace. Jen váš QA problém, přímý pohled na věc a zjištění, jestli jsme pro vás vhodní.",
-    primaryCta: { label: "Domluvit discovery hovor", href: "/book" },
+    primaryCta: { label: "Domluvit 20min hovor", href: "/book" },
     secondaryCta: {
-      label: "Nebo odebírat měsíční newsletter",
-      href: "/newsletter",
+      label: "Nebo napsat email",
+      href: "mailto:hello@qawave.ai",
     },
   },
 
@@ -341,7 +341,6 @@ export const cs: Messages = {
           { label: "Blog", href: "/blog" },
           { label: "Zákazníci", href: "/customers" },
           { label: "Kariéra", href: "/careers" },
-          { label: "Press", href: "/about#press" },
         ],
       },
       {
@@ -450,7 +449,7 @@ export const cs: Messages = {
         },
       ],
     },
-    cta: { label: "Domluvit 20minutový hovor", href: "/book" },
+    cta: { label: "Domluvit 20min hovor", href: "/book" },
   },
 
   // ----------------------------------------------------------
@@ -482,7 +481,7 @@ export const cs: Messages = {
         body: "Vaši SDETs jsou cenní. Přesuneme je od údržby frameworků ke strategii testování. Rutinní práci přeberou agenti.",
       },
     ],
-    cta: { label: "Domluvit hovor", href: "/book" },
+    cta: { label: "Domluvit 20min hovor", href: "/book" },
   },
 
   // ----------------------------------------------------------
@@ -574,12 +573,22 @@ export const cs: Messages = {
         body: "Žádné smlouvy, žádné commitments. Pokud je match, společně navrhneme Design Sprint.",
       },
     ],
+    form: {
+      name: "Vaše jméno",
+      email: "Pracovní email",
+      company: "Firma",
+      role: "Vaše pozice (nepovinné)",
+      message: "Jaká je vaše největší QA výzva? (nepovinné)",
+      submit: "Odeslat žádost o hovor",
+      success: "Odesláno. Ozveme se do 4 hodin.",
+      error: "Něco se pokazilo. Zkuste nám napsat přímo na email.",
+    },
     contact: {
       title: "Raději email?",
       email: "hello@qawave.ai",
       note: "Obvykle odpovídáme do 4 hodin během CET pracovní doby.",
     },
-    cta: { label: "Napsat email", href: "mailto:hello@qawave.ai" },
+    cta: { label: "hello@qawave.ai", href: "mailto:hello@qawave.ai" },
   },
 
   // ----------------------------------------------------------
