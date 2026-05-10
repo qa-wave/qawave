@@ -193,7 +193,7 @@ export const cs: Messages = {
     stat: "40 agentů. 1 zakladatel.",
     cta: {
       label: "Číst: Jak jsem postavil QAWave na 40 agentech",
-      href: "/blog/40-agents",
+      href: "/blog",
     },
   },
 
