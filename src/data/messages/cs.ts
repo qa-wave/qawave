@@ -193,7 +193,7 @@ export const cs: Messages = {
     stat: "40 agentů. 1 zakladatel.",
     cta: {
       label: "Číst: Jak jsem postavil QAWave na 40 agentech",
-      href: "/blog",
+      href: "/blog/40-agents",
     },
   },
 
@@ -599,7 +599,48 @@ export const cs: Messages = {
     subheadline:
       "Technické deep-dives o agentním QA, AI testování a řízení firmy na 40 agentech.",
     emptyState:
-      "První články se připravují. Odebírejte newsletter, ať vám nic neunikne.",
+      "Další články se připravují. Odebírejte newsletter, ať vám nic neunikne.",
+    posts: [
+      {
+        slug: "40-agents",
+        title: "40 agentů. 1 zakladatel. Tak řídím QAWave.",
+        date: "10. května 2026",
+        readingTime: "8 min čtení",
+        excerpt:
+          "QAWave nemá zaměstnance. Má jednoho člověka a 40 AI agentů. Tady je architektura, selhání i to, co skutečně funguje.",
+        body: [
+          "QAWave jsem založil v roce 2025 s hypotézou: pokud AI agenti dokážou psát, testovat a reviewovat kód — dokážou řídit celou firmu?",
+          "O rok později je odpověď: ano, z větší části. QAWave řídí jeden člověk (já, Tomas) a 40 specializovaných AI agentů. Žádní zaměstnanci. Žádní kontratoři. Žádní outsourcovaní SDRs. Stejná agentní architektura, kterou prodáváme zákazníkům, je architektura, na které běží naše firma.",
+          "Není to myšlenkový experiment. Je to produkce.",
+          "## Roster agentů",
+          "Každá byznysová funkce, která by tradičně vyžadovala zaměstnance, je v rukou dedikovaného agenta. Každý agent má vlastní systémové prompty, specifický přístup k nástrojům (MCP servery, API, file systém) a eval baseline, které definují, jak vypadá 'dobrý výstup'.",
+          "Aktuální roster:",
+          "**Revenue a růst:** Content Marketer (obsahový kalendář, distribuce, repurposing), Copywriter (CZ + EN copy pro landing, emaily, reklamy), SEO Specialist (keyword research, on-page optimalizace), Blog Writer (long-form technický obsah), Customer Retention (onboarding sekvence, QBR příprava).",
+          "**Produkt a engineering:** Code Reviewer (TSX/TS změny — výkon, a11y, idiomatický React 19), QA Expert (validuje technické claimy, přesnost thought leadershipu), Frontend Designer (vizuální specifikace pro Next.js + Tailwind komponenty), Technical Writer (case studies, dokumentace, API reference).",
+          "**Strategie a ops:** Chief of Staff (routuje práci mezi agenty, denní digest, eskalace), Brand Guardian (audituje veškerý copy proti brand guidelines před publikací), Competitive Analyst (sleduje Applitools, Mabl, QA Wolf, Functionize, TestRigor).",
+          "To je 12 pojmenovaných agentů pro řízení firmy. Zbývajících ~28 jsou QA delivery agenti — skutečný produkt, který prodáváme zákazníkům.",
+          "## Co skutečně funguje",
+          "**Produkce obsahu škáluje okamžitě.** Před agenty znamenal blog post blokaci 4–6 hodin. Teď nastíním tezi (3 odrážky), Blog Writer agent vyprodukuje draft, Brand Guardian ho zkontroluje proti voice guidelines, SEO Specialist ho optimalizuje. Moje role je redakční úsudek: reprezentuje tohle to, čemu skutečně věříme? To zabere 30 minut.",
+          "**Code review je konzistentnější než lidé.** Code Reviewer agent kontroluje každou TSX změnu proti stejnému 14bodovému checklistu: výkonové vzory, porušení a11y, React 19 idiomy, použití Tailwind v4 tokenů. Neunaví se v pátek odpoledne. Nepřeskočí a11y check, protože je to 'jen malá změna'.",
+          "**Competitive intelligence je vždy aktuální.** Competitive Analyst agent monitoruje pět konkurentů denně. Když Applitools shipne novou funkci nebo QA Wolf změní pricing, vím to do hodin — ne když o tom někdo tweetne.",
+          "## Co (zatím) nefunguje",
+          "**Úsudkové rozhodnutí.** Agenti nedokážou rozhodnout, zda pursuit zákaznický segment, změnit pricing nebo pivotovat positioning. Mohou zkoumat a doporučovat, ale human-in-the-loop pro strategická rozhodnutí je nezpochybnitelný. Tohle je by design, ne omezení.",
+          "**Budování vztahů.** Discovery call s VP of Engineering se nedá delegovat. Agent může připravit brief, prozkoumat stack prospekta a navrhnout follow-up emaily — ale 20minutový rozhovor, kde se buduje důvěra? To jsem já.",
+          "**Nová kreativní práce.** Agenti excelují v produkci obsahu v rámci zavedených vzorů. Ale první verze nového messaging frameworku, brand refresh, nový koncept sekce — to vyžaduje lidský kreativní úsudek. Agenti iterují a zdokonalují; lidé originují.",
+          "## Eval harness",
+          "Jak řídíte 40 agentů bez ztráty kvality? Stejně jako řídíme QA agenty pro zákazníky: eval harnesy.",
+          "Každý agent má dataset očekávaných chování. Blog Writer je například evaluován na: přesnost technických claimů (žádné halucinované benchmarky), soulad s brand voice (žádná zakázaná slova), strukturální kvalitu (jasná teze, podpůrné důkazy, akční závěr). Tyto evaly běží každou noc.",
+          "Když výstup agenta regresuje — řekněme, že Copywriter začne používat 'revoluční' (zakázané slovo v našich brand guidelines) — je to chyceno dřív, než se obsah dostane ke mně. Eval blokuje výstup a nahlásí ho.",
+          "Tohle je identické s tím, jak naši QA agenti fungují pro zákazníky. Eval harness je produkt.",
+          "## Proč to záleží pro váš QA tým",
+          "Pokud 40 agentů dokáže řídit B2B firmu s reálnými zákazníky, reálnými quality bary a reálnými revenue targety — dokážou řídit i váš QA tým.",
+          "Stejné vzory platí: specializovaní agenti s doménovou znalostí, eval harnesy, které chytají regrese, human-in-the-loop pro úsudková rozhodnutí. Rozdíl je v rozsahu. Pro vás jde o generování testů, detekci flakiness a CI triage. Pro nás jde o všechno.",
+          "We eat our own dog food. To není tagline — je to architektura.",
+          "## Vyzkoušejte to",
+          "Pokud vás zajímá, jak se to aplikuje na váš stack, domluvte si 20minutový hovor. Žádná prodejní prezentace. Jen váš QA problém, můj upřímný pohled a zjištění, jestli vám naši agenti mohou pomoct.",
+        ],
+      },
+    ],
   },
 
   // ----------------------------------------------------------

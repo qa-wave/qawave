@@ -193,7 +193,7 @@ export const en: Messages = {
     stat: "40 agents. 1 founder.",
     cta: {
       label: "Read: How I built QAWave on 40 agents",
-      href: "/blog",
+      href: "/blog/40-agents",
     },
   },
 
@@ -595,7 +595,48 @@ export const en: Messages = {
     subheadline:
       "Technical deep-dives on agentic QA, AI testing, and running a company on 40 agents.",
     emptyState:
-      "First posts are in the pipeline. Subscribe to the newsletter to get notified.",
+      "More posts are in the pipeline. Subscribe to the newsletter to get notified.",
+    posts: [
+      {
+        slug: "40-agents",
+        title: "40 agents. 1 founder. This is how I run QAWave.",
+        date: "May 10, 2026",
+        readingTime: "8 min read",
+        excerpt:
+          "QAWave has no employees. It has one human and 40 AI agents. Here's the architecture, the failures, and what actually works.",
+        body: [
+          "I started QAWave in 2025 with a hypothesis: if AI agents can write, test, and review code — can they run an entire company?",
+          "A year later, the answer is yes, mostly. QAWave is operated by one human (me, Tomas) and 40 specialized AI agents. No employees. No contractors. No outsourced SDRs. The same agent architecture we sell to customers is the architecture that runs our business.",
+          "This isn't a thought experiment. It's production.",
+          "## The agent roster",
+          "Every business function that would traditionally require a hire is handled by a dedicated agent. Each agent has custom system prompts, specific tool access (MCP servers, APIs, file system), and eval baselines that define what 'good output' looks like.",
+          "Here's the current roster:",
+          "**Revenue & growth:** Content Marketer (content calendar, distribution, repurposing), Copywriter (CZ + EN copy for landing pages, emails, ads), SEO Specialist (keyword research, on-page optimization), Blog Writer (long-form technical content), Customer Retention (onboarding sequences, QBR prep).",
+          "**Product & engineering:** Code Reviewer (TSX/TS changes — performance, a11y, idiomatic React 19), QA Expert (validates technical claims, thought leadership accuracy), Frontend Designer (visual specs for Next.js + Tailwind components), Technical Writer (case studies, docs, API references).",
+          "**Strategy & ops:** Chief of Staff (routes work across agents, daily digests, escalations), Brand Guardian (audits all copy against brand guidelines before publishing), Competitive Analyst (tracks Applitools, Mabl, QA Wolf, Functionize, TestRigor).",
+          "That's 12 named agents for running the business. The remaining ~28 are QA delivery agents — the actual product we sell to customers.",
+          "## What actually works",
+          "**Content production scales instantly.** Before agents, writing a blog post meant blocking 4–6 hours. Now I outline the thesis (3 bullets), the Blog Writer agent produces a draft, Brand Guardian checks it against our voice guidelines, SEO Specialist optimizes it. My role is editorial judgment: does this represent what we actually believe? That takes 30 minutes.",
+          "**Code review is more consistent than humans.** The Code Reviewer agent checks every TSX change against the same 14-point checklist: performance patterns, accessibility violations, React 19 idioms, Tailwind v4 token usage. It doesn't get tired on Friday afternoons. It doesn't skip the a11y check because it's 'just a small change'.",
+          "**Competitive intelligence is always current.** The Competitive Analyst agent monitors five competitors daily. When Applitools ships a new feature or QA Wolf changes pricing, I know within hours — not when someone tweets about it.",
+          "## What doesn't work (yet)",
+          "**Judgment calls.** Agents can't decide whether to pursue a customer segment, change pricing, or pivot positioning. They can research and recommend, but the human-in-the-loop for strategic decisions is non-negotiable. This is by design, not a limitation.",
+          "**Relationship building.** A discovery call with a VP of Engineering can't be delegated. The agent can prepare the brief, research the prospect's stack, and draft follow-up emails — but the 20-minute conversation where trust is built? That's me.",
+          "**Novel creative work.** Agents excel at content production within established patterns. But the first version of a new messaging framework, a brand refresh, a new section concept — that requires human creative judgment. Agents iterate and refine; humans originate.",
+          "## The eval harness",
+          "How do you manage 40 agents without losing quality? The same way we manage QA agents for customers: eval harnesses.",
+          "Every agent has a dataset of expected behaviors. The Blog Writer, for example, is evaluated against: accurate technical claims (no hallucinated benchmarks), brand voice compliance (no banned words), structural quality (clear thesis, supporting evidence, actionable takeaway). These evals run nightly.",
+          "When an agent's output regresses — say the Copywriter starts using 'revolutionary' (a banned word in our brand guidelines) — it's caught before the content reaches me. The eval blocks the output and flags it.",
+          "This is identical to how our QA agents work for customers. The eval harness is the product.",
+          "## Why this matters for your QA team",
+          "If 40 agents can run a B2B company with real customers, real quality bars, and real revenue targets — they can run your QA team.",
+          "The same patterns apply: specialized agents with domain knowledge, eval harnesses that catch regressions, human-in-the-loop for judgment calls. The difference is scope. For you, it's test generation, flakiness detection, and CI triage. For us, it's everything.",
+          "We eat our own dog food. That's not a tagline — it's the architecture.",
+          "## Try it",
+          "If you're curious how this applies to your stack, book a 20-minute call. No pitch deck. Just your QA pain, my honest perspective, and whether our agents can help.",
+        ],
+      },
+    ],
   },
 
   // ----------------------------------------------------------

@@ -238,10 +238,20 @@ export interface BookPageMessages {
   cta: CtaLink;
 }
 
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  readingTime: string;
+  excerpt: string;
+  body: string[];
+}
+
 export interface BlogPageMessages {
   headline: string;
   subheadline: string;
   emptyState: string;
+  posts: BlogPost[];
 }
 
 export interface LegalSection {
