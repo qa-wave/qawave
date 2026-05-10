@@ -45,6 +45,7 @@ export default function BookPage() {
       role: (form.elements.namedItem("role") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
     };
 
     try {
@@ -157,6 +158,15 @@ export default function BookPage() {
                 onSubmit={handleSubmit}
                 className="space-y-4 rounded-xl border border-border bg-surface p-6 md:p-8"
               >
+                {/* Honeypot — hidden from humans, traps bots */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                  aria-hidden="true"
+                />
                 <div>
                   <label htmlFor="name" className="sr-only">
                     {t("form.name")}

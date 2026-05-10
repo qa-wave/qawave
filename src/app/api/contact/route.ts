@@ -22,11 +22,43 @@ interface ContactPayload {
   teamSize?: string;
   currentStack?: string;
   message?: string;
+  website?: string; // honeypot field — should always be empty
+}
+
+// Simple in-memory rate limiting (per IP, 5 requests per hour)
+const rateLimitMap = new Map<string, number[]>();
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 60 * 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = rateLimitMap.get(ip) ?? [];
+  const recent = timestamps.filter((t) => now - t < RATE_WINDOW_MS);
+  if (recent.length >= RATE_LIMIT) return true;
+  recent.push(now);
+  rateLimitMap.set(ip, recent);
+  return false;
 }
 
 export async function POST(request: Request) {
   try {
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      "unknown";
+
+    if (isRateLimited(ip)) {
+      return Response.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 },
+      );
+    }
+
     const body = (await request.json()) as ContactPayload;
+
+    // Honeypot — bots fill this hidden field
+    if (body.website) {
+      return Response.json({ success: true }); // silent fail for bots
+    }
 
     if (!body.name || !body.email || !body.company) {
       return Response.json(

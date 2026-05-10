@@ -32,8 +32,22 @@ export default function BlogPostPage() {
     );
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: "2026-05-10",
+    author: { "@type": "Person", name: "Tomas Mertin" },
+    publisher: { "@type": "Organization", name: "QAWave" },
+  };
+
   return (
     <article className="pb-24 pt-32 md:pb-32 md:pt-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"

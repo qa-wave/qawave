@@ -179,25 +179,13 @@ export function HeroSection() {
             <Badge>{t("badge")}</Badge>
           </motion.div>
 
-          <motion.h1
-            variants={heroTextReveal}
-            
-            animate="visible" 
-            custom={0.15}
-            className="text-5xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl"
-          >
+          <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl">
             {t("headline")}
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={heroTextReveal}
-            
-            animate="visible" 
-            custom={0.3}
-            className="mt-6 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg"
-          >
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg">
             {t("subheadline")}
-          </motion.p>
+          </p>
 
           <motion.div
             variants={heroTextReveal}
