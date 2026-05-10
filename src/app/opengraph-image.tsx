@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "qawave.ai — The Edge of QA Automation";
+export const alt = "QAWave — Ride the AI wave in QA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,22 +16,37 @@ export default function Image() {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "80px",
-          background: "#050505",
+          background: "#0F172A",
           fontFamily: "system-ui, sans-serif",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Gradient backdrop */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "60%",
+            height: "100%",
+            background:
+              "radial-gradient(ellipse 80% 80% at 80% 40%, rgba(14,165,233,0.2) 0%, rgba(6,182,212,0.1) 40%, rgba(139,92,246,0.08) 70%, transparent 100%)",
+          }}
+        />
+
         {/* Logo */}
         <div
           style={{
             display: "flex",
-            fontSize: 28,
+            fontSize: 32,
             fontWeight: 700,
-            color: "#ededed",
+            color: "#F8FAFC",
             marginBottom: 48,
+            letterSpacing: "-0.02em",
           }}
         >
-          qawave
-          <span style={{ color: "#6366f1" }}>.ai</span>
+          QA<span style={{ color: "#0EA5E9" }}>Wave</span>
         </div>
 
         {/* Badge */}
@@ -40,14 +55,14 @@ export default function Image() {
             display: "flex",
             padding: "8px 20px",
             borderRadius: 9999,
-            border: "1px solid rgba(99, 102, 241, 0.3)",
-            background: "rgba(79, 70, 229, 0.1)",
+            border: "1px solid rgba(14, 165, 233, 0.3)",
+            background: "rgba(14, 165, 233, 0.1)",
             fontSize: 16,
-            color: "#818cf8",
+            color: "#0EA5E9",
             marginBottom: 32,
           }}
         >
-          QA Automation Consulting & Implementation
+          Agentic AI for QA Engineering
         </div>
 
         {/* Headline */}
@@ -55,14 +70,14 @@ export default function Image() {
           style={{
             display: "flex",
             fontSize: 64,
-            fontWeight: 800,
-            color: "#ededed",
+            fontWeight: 700,
+            color: "#F8FAFC",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
             maxWidth: 800,
           }}
         >
-          The Edge of QA Automation
+          Ride the AI wave in QA.
         </div>
 
         {/* Subheadline */}
@@ -70,44 +85,30 @@ export default function Image() {
           style={{
             display: "flex",
             fontSize: 22,
-            color: "#a1a1aa",
+            color: "#94A3B8",
             marginTop: 24,
             maxWidth: 700,
             lineHeight: 1.5,
           }}
         >
-          Agentic AI testing — from strategy through production.
+          Custom AI agents that live in your CI/CD — generating tests, healing
+          flakiness, triaging bugs 24/7.
         </div>
 
-        {/* Decorative dots */}
+        {/* Wave decoration */}
         <div
           style={{
             position: "absolute",
+            bottom: 60,
             right: 80,
-            top: 180,
             display: "flex",
-            flexDirection: "column",
-            gap: 40,
+            alignItems: "center",
+            gap: 12,
+            fontSize: 16,
+            color: "#64748B",
           }}
         >
-          {[0, 1, 2].map((row) => (
-            <div key={row} style={{ display: "flex", gap: 40 }}>
-              {[0, 1, 2].map((col) => (
-                <div
-                  key={col}
-                  style={{
-                    width: 12,
-                    height: 12,
-                    borderRadius: "50%",
-                    background:
-                      row + col < 3
-                        ? "#6366f1"
-                        : "rgba(99, 102, 241, 0.2)",
-                  }}
-                />
-              ))}
-            </div>
-          ))}
+          qawave.ai
         </div>
       </div>
     ),
