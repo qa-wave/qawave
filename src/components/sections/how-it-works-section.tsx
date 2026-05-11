@@ -6,10 +6,8 @@ import {
   Sparkles,
   HeartPulse,
   Target,
-  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -80,18 +78,6 @@ export function HowItWorksSection() {
           })}
         </motion.ul>
 
-        <div className="mt-12 text-center">
-          <Link
-            href={t("cta.href")}
-            className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-light md:text-base"
-          >
-            {t("cta.label")}
-            <ArrowRight
-              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-              aria-hidden="true"
-            />
-          </Link>
-        </div>
       </div>
     </section>
   );

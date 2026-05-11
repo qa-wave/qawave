@@ -120,13 +120,13 @@ export const en: Messages = {
         icon: "HeartPulse",
         emoji: "🩹",
         title: "Heal",
-        body: "Selector drift, timing races, test data churn — the agents catch regressions, propose fixes, and merge them when CI is green. Your SDETs approve, they don't babysit.",
+        body: "Selector drift, timing races, test data churn — the agents catch regressions and propose fixes as PRs. Your SDETs review and approve. They stop babysitting, start strategizing.",
       },
       {
         icon: "Target",
         emoji: "🎯",
         title: "Triage",
-        body: "When CI fails, the Bug Triager agent analyzes logs, traces, and diffs to propose root cause and assignee — in under 90 seconds. Incident response starts before the pager rings.",
+        body: "When CI fails, the Bug Triager agent analyzes logs, traces, and diffs to propose root cause and assignee — in seconds, not hours. Incident response starts before the pager rings.",
       },
     ],
     cta: { label: "See how agents work", href: "/product" },
@@ -137,11 +137,11 @@ export const en: Messages = {
   // ----------------------------------------------------------
   comparison: {
     headline: "Code-first. Custom. Yours.",
-    columns: ["QAWave", "Applitools", "Mabl", "in-house SDET"],
+    columns: ["QAWave", "Applitools", "Mabl", "QA Wolf"],
     rows: [
       {
         feature: "Code-first output",
-        values: ["yes", "partial", "no", "yes"],
+        values: ["yes", "partial", "no", "partial"],
       },
       {
         feature: "Tests live in your Git repo",
@@ -153,11 +153,11 @@ export const en: Messages = {
       },
       {
         feature: "24/7 continuous operation",
-        values: ["yes", "yes", "yes", "no"],
+        values: ["yes", "yes", "yes", "yes"],
       },
       {
         feature: "No vendor lock-in",
-        values: ["yes", "no", "no", "yes"],
+        values: ["yes", "no", "no", "no"],
       },
       {
         feature: "AI-native architecture",
@@ -165,15 +165,15 @@ export const en: Messages = {
       },
       {
         feature: "Self-hosted / VPC option",
-        values: ["yes", "partial", "no", "yes"],
+        values: ["yes", "partial", "no", "no"],
       },
       {
         feature: "Live in 4 weeks",
-        values: ["yes", "no", "partial", "no"],
+        values: ["yes", "no", "partial", "partial"],
       },
     ],
     cta: { label: "See full product details", href: "/product" },
-    legend: { yes: "yes", partial: "partial", no: "no" },
+    legend: { yes: "yes", partial: "partial (limited)", no: "no" },
   },
 
   // ----------------------------------------------------------
@@ -362,7 +362,7 @@ export const en: Messages = {
       },
     ],
     copyright: "© 2026 QAWave s.r.o. · Made in Prague · Built on AI, for AI teams",
-    legalNote: "VAT CZ01234567",
+    legalNote: "Registration pending",
   },
 
   // ----------------------------------------------------------
@@ -389,7 +389,7 @@ export const en: Messages = {
         {
           icon: "HeartPulse",
           title: "Heal",
-          body: "Selector drift, timing races, test data churn — the agents catch regressions, propose fixes, and merge them when CI is green.",
+          body: "Selector drift, timing races, test data churn — the agents catch regressions and propose fixes as PRs. Your SDETs review and approve.",
           details: [
             "Understands test intent, not just selectors — fixes at the right level",
             "Proposes patches as PRs — your SDETs approve, they don't babysit",
@@ -400,7 +400,7 @@ export const en: Messages = {
         {
           icon: "Target",
           title: "Triage",
-          body: "When CI fails, the Bug Triager agent analyzes logs, traces, and diffs to propose root cause and assignee — in under 90 seconds.",
+          body: "When CI fails, the Bug Triager agent analyzes logs, traces, and diffs to propose root cause and assignee — in seconds, not hours.",
           details: [
             "Correlates test failures with recent commits and infrastructure changes",
             "Suggests root cause and assigns to the right engineer automatically",

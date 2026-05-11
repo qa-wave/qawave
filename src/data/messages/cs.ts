@@ -122,13 +122,13 @@ export const cs: Messages = {
         icon: "HeartPulse",
         emoji: "🩹",
         title: "Heal",
-        body: "Selector drift, timing races, test data churn — agenti chytají regrese, navrhují fixy a mergují je, když je CI zelené. Vaši SDETs schvalují, nebabysitují.",
+        body: "Selector drift, timing races, test data churn — agenti chytají regrese a navrhují fixy jako PR. Vaši SDETs reviewují a schvalují. Přestanou babysitovat, začnou strategizovat.",
       },
       {
         icon: "Target",
         emoji: "🎯",
         title: "Triage",
-        body: "Když CI selže, Bug Triager agent analyzuje logy, traces a diffy a navrhne root cause i assignee — do 90 sekund. Incident response začíná dřív, než pager zazvoní.",
+        body: "Když CI selže, Bug Triager agent analyzuje logy, traces a diffy a navrhne root cause i assignee — v řádu sekund, ne hodin. Incident response začíná dřív, než pager zazvoní.",
       },
     ],
     cta: { label: "Jak agenti fungují", href: "/product" },
@@ -140,11 +140,11 @@ export const cs: Messages = {
   // ----------------------------------------------------------
   comparison: {
     headline: "Code-first. Na míru. Vaše.",
-    columns: ["QAWave", "Applitools", "Mabl", "in-house SDET"],
+    columns: ["QAWave", "Applitools", "Mabl", "QA Wolf"],
     rows: [
       {
         feature: "Code-first výstup",
-        values: ["yes", "partial", "no", "yes"],
+        values: ["yes", "partial", "no", "partial"],
       },
       {
         feature: "Testy žijí ve vašem Git repozitáři",
@@ -156,11 +156,11 @@ export const cs: Messages = {
       },
       {
         feature: "Nepřetržitý provoz 24/7",
-        values: ["yes", "yes", "yes", "no"],
+        values: ["yes", "yes", "yes", "yes"],
       },
       {
         feature: "Žádný vendor lock-in",
-        values: ["yes", "no", "no", "yes"],
+        values: ["yes", "no", "no", "no"],
       },
       {
         feature: "AI-native architektura",
@@ -168,15 +168,15 @@ export const cs: Messages = {
       },
       {
         feature: "Self-hosted / VPC možnost",
-        values: ["yes", "partial", "no", "yes"],
+        values: ["yes", "partial", "no", "no"],
       },
       {
         feature: "Živý provoz za 4 týdny",
-        values: ["yes", "no", "partial", "no"],
+        values: ["yes", "no", "partial", "partial"],
       },
     ],
     cta: { label: "Celý produkt v detailu", href: "/product" },
-    legend: { yes: "ano", partial: "částečně", no: "ne" },
+    legend: { yes: "ano", partial: "částečně (omezené)", no: "ne" },
   },
 
   // ----------------------------------------------------------
@@ -365,7 +365,7 @@ export const cs: Messages = {
       },
     ],
     copyright: "© 2026 QAWave s.r.o. · Made in Prague · Postaveno na AI",
-    legalNote: "IČO / DIČ CZ01234567",
+    legalNote: "Registrace probíhá",
   },
 
   // ----------------------------------------------------------
@@ -392,7 +392,7 @@ export const cs: Messages = {
         {
           icon: "HeartPulse",
           title: "Heal",
-          body: "Selector drift, timing races, test data churn — agenti chytají regrese, navrhují fixy a mergují je, když je CI zelené.",
+          body: "Selector drift, timing races, test data churn — agenti chytají regrese a navrhují fixy jako PR. Vaši SDETs reviewují a schvalují.",
           details: [
             "Chápou záměr testu, ne jen selektory — opravují na správné úrovni",
             "Navrhují patche jako PR — vaši SDETs schvalují, nebabysitují",
@@ -403,7 +403,7 @@ export const cs: Messages = {
         {
           icon: "Target",
           title: "Triage",
-          body: "Když CI selže, Bug Triager agent analyzuje logy, traces a diffy a navrhne root cause i assignee — do 90 sekund.",
+          body: "Když CI selže, Bug Triager agent analyzuje logy, traces a diffy a navrhne root cause i assignee — v řádu sekund, ne hodin.",
           details: [
             "Koreluje selhání testů s nedávnými commity a změnami infrastruktury",
             "Navrhuje root cause a automaticky přiřazuje správnému inženýrovi",

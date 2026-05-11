@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { Globe } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -20,6 +21,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         className
       )}
     >
+      <Globe className="ml-1.5 h-3.5 w-3.5 text-neutral-500" aria-hidden="true" />
       {routing.locales.map((loc) => {
         const active = loc === locale;
         return (

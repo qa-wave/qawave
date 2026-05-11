@@ -263,14 +263,14 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Flow arrows on desktop */}
-            <div className="mt-4 hidden items-center justify-center gap-2 text-neutral-600 md:flex">
+            {/* Flow arrows */}
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-neutral-600">
               <span className="text-xs">PR opened</span>
-              <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
               <span className="text-xs text-accent">agents analyze & generate</span>
-              <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
               <span className="text-xs">tests run in CI</span>
-              <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
               <span className="text-xs">PR ready for review</span>
             </div>
           </motion.div>

@@ -177,7 +177,7 @@ export default function BookPage() {
                     type="text"
                     required
                     placeholder={t("form.name")}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent [&:not(:placeholder-shown):invalid]:border-error"
                   />
                 </div>
                 <div>
@@ -190,7 +190,7 @@ export default function BookPage() {
                     type="email"
                     required
                     placeholder={t("form.email")}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent [&:not(:placeholder-shown):invalid]:border-error"
                   />
                 </div>
                 <div>
@@ -203,7 +203,7 @@ export default function BookPage() {
                     type="text"
                     required
                     placeholder={t("form.company")}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent [&:not(:placeholder-shown):invalid]:border-error"
                   />
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export default function BookPage() {
                     name="role"
                     type="text"
                     placeholder={t("form.role")}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-neutral-600 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent [&:not(:placeholder-shown):invalid]:border-error"
                   />
                 </div>
                 <div>

@@ -2,7 +2,6 @@
 
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { heroTextReveal } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -169,15 +168,9 @@ export function HeroSection() {
         )}
       >
         <div>
-          <motion.div
-            variants={heroTextReveal}
-            
-            animate="visible" 
-            custom={0}
-            className="mb-6"
-          >
+          <div className="mb-6">
             <Badge>{t("badge")}</Badge>
-          </motion.div>
+          </div>
 
           <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl">
             {t("headline")}
@@ -187,30 +180,18 @@ export function HeroSection() {
             {t("subheadline")}
           </p>
 
-          <motion.div
-            variants={heroTextReveal}
-            
-            animate="visible" 
-            custom={0.45}
-            className="mt-8 flex flex-col gap-4 sm:flex-row"
-          >
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button variant="primary" href={t("primaryCta.href")}>
               {t("primaryCta.label")}
             </Button>
             <Button variant="secondary" href={t("secondaryCta.href")}>
               {t("secondaryCta.label")}
             </Button>
-          </motion.div>
+          </div>
 
-          <motion.p
-            variants={heroTextReveal}
-            
-            animate="visible" 
-            custom={0.6}
-            className="mt-8 max-w-md text-sm text-neutral-500"
-          >
+          <p className="mt-8 max-w-md text-sm text-neutral-500">
             {t("trustPill")}
-          </motion.p>
+          </p>
         </div>
 
         <div className="hidden items-center justify-center lg:flex">
