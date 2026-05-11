@@ -63,7 +63,7 @@ export function ComparisonSection() {
           <table className="w-full min-w-[640px] text-left">
             <thead>
               <tr className="border-b border-border">
-                <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest text-neutral-500">
+                <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest text-neutral-400">
                   &nbsp;
                 </th>
                 {columns.map((col, i) => (
@@ -108,7 +108,7 @@ export function ComparisonSection() {
           </table>
         </motion.div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 text-sm text-neutral-500 md:flex-row md:gap-8">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 text-sm text-neutral-400 md:flex-row md:gap-8">
           <p className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             <span className="inline-flex items-center gap-1.5">
               <ValueCell value="yes" /> {t("legend.yes")}

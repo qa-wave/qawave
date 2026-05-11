@@ -26,7 +26,7 @@ export function Footer() {
             >
               QA<span className="text-accent">Wave</span>
             </Link>
-            <p className="mt-2 max-w-xs text-sm text-neutral-500">
+            <p className="mt-2 max-w-xs text-sm text-neutral-400">
               Ride the AI wave in QA.
             </p>
           </div>
@@ -48,7 +48,7 @@ export function Footer() {
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="text-sm text-neutral-500 transition-colors hover:text-foreground"
+                          className="text-sm text-neutral-400 transition-colors hover:text-foreground"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -61,7 +61,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-neutral-500 transition-colors hover:text-foreground"
+                        className="text-sm text-neutral-400 transition-colors hover:text-foreground"
                       >
                         {link.label}
                       </Link>
@@ -74,8 +74,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 md:flex-row md:items-center">
-          <p className="text-xs text-neutral-600">{t("copyright")}</p>
-          <p className="text-xs text-neutral-600">{t("legalNote")}</p>
+          <p className="text-xs text-neutral-500">{t("copyright")}</p>
+          <p className="text-xs text-neutral-500">{t("legalNote")}</p>
         </div>
       </div>
     </footer>

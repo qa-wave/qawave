@@ -28,7 +28,7 @@ export function BuiltWithSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           id="built-with-heading"
-          className="text-center text-xs font-medium uppercase tracking-widest text-neutral-500"
+          className="text-center text-xs font-medium uppercase tracking-widest text-neutral-400"
         >
           {t("label")}
         </h2>
@@ -38,7 +38,7 @@ export function BuiltWithSection() {
             return (
               <li
                 key={name}
-                className="text-neutral-500 transition-colors hover:text-foreground"
+                className="text-neutral-400 transition-colors hover:text-foreground"
               >
                 {Logo ? (
                   <Logo className="h-5 w-auto md:h-6" />
@@ -54,7 +54,7 @@ export function BuiltWithSection() {
 
         {trustedLogos.length > 0 && (
           <div className="mt-12 border-t border-border pt-10 text-center">
-            <h3 className="text-xs font-medium uppercase tracking-widest text-neutral-500">
+            <h3 className="text-xs font-medium uppercase tracking-widest text-neutral-400">
               {t("trustedByLabel")}
             </h3>
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
