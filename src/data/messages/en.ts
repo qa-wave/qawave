@@ -313,9 +313,11 @@ export const en: Messages = {
     subheadline:
       "20 minutes. No pitch deck. Just your QA pain, an honest perspective, and whether we're a fit.",
     primaryCta: { label: "Book a 20-min call", href: "/book" },
-    secondaryCta: {
-      label: "Or reach out via email",
-      href: "mailto:hello@qawave.ai",
+    newsletter: {
+      label: "Or get the monthly newsletter",
+      placeholder: "Work email",
+      submit: "Subscribe",
+      success: "Subscribed. Welcome aboard.",
     },
   },
 

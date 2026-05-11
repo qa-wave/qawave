@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -86,6 +86,8 @@ const pulseGlow: Variants = {
 };
 
 function NetworkGraph() {
+  const reduced = useReducedMotion();
+
   return (
     <div className="relative aspect-square w-full max-w-[400px]">
       <svg
@@ -98,7 +100,16 @@ function NetworkGraph() {
         {EDGES.map((edge, i) => {
           const from = NODES[edge.from];
           const to = NODES[edge.to];
-          return (
+          return reduced ? (
+            <path
+              key={`edge-${edge.from}-${edge.to}`}
+              d={`M ${from.cx} ${from.cy} L ${to.cx} ${to.cy}`}
+              stroke="#06B6D4"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              opacity={0.4}
+            />
+          ) : (
             <motion.path
               key={`edge-${edge.from}-${edge.to}`}
               d={`M ${from.cx} ${from.cy} L ${to.cx} ${to.cy}`}
@@ -112,32 +123,44 @@ function NetworkGraph() {
             />
           );
         })}
-        {NODES.map((node) => (
-          <g key={`node-${node.id}`}>
-            <motion.circle
-              cx={node.cx}
-              cy={node.cy}
-              r={12}
-              fill="#0EA5E9"
-              custom={node.id}
-              variants={pulseGlow}
-              initial="hidden"
-              animate="visible"
-            />
-            <motion.circle
+        {NODES.map((node) =>
+          reduced ? (
+            <circle
+              key={`node-${node.id}`}
               cx={node.cx}
               cy={node.cy}
               r={6}
               fill="#06B6D4"
               stroke="#0EA5E9"
               strokeWidth={2}
-              custom={node.id}
-              variants={nodeCircle}
-              initial="hidden"
-              animate="visible"
             />
-          </g>
-        ))}
+          ) : (
+            <g key={`node-${node.id}`}>
+              <motion.circle
+                cx={node.cx}
+                cy={node.cy}
+                r={12}
+                fill="#0EA5E9"
+                custom={node.id}
+                variants={pulseGlow}
+                initial="hidden"
+                animate="visible"
+              />
+              <motion.circle
+                cx={node.cx}
+                cy={node.cy}
+                r={6}
+                fill="#06B6D4"
+                stroke="#0EA5E9"
+                strokeWidth={2}
+                custom={node.id}
+                variants={nodeCircle}
+                initial="hidden"
+                animate="visible"
+              />
+            </g>
+          ),
+        )}
       </svg>
     </div>
   );

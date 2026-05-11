@@ -315,9 +315,11 @@ export const cs: Messages = {
     subheadline:
       "20 minut. Bez prodejní prezentace. Jen váš QA problém, přímý pohled na věc a zjištění, jestli jsme pro vás vhodní.",
     primaryCta: { label: "Domluvit 20min hovor", href: "/book" },
-    secondaryCta: {
-      label: "Nebo napsat email",
-      href: "mailto:hello@qawave.ai",
+    newsletter: {
+      label: "Nebo odebírat měsíční newsletter",
+      placeholder: "Pracovní email",
+      submit: "Odebírat",
+      success: "Přihlášeno. Vítejte na palubě.",
     },
   },
 

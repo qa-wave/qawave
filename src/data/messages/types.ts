@@ -148,7 +148,12 @@ export interface FinalCtaMessages {
   headline: string;
   subheadline: string;
   primaryCta: CtaLink;
-  secondaryCta: CtaLink;
+  newsletter: {
+    label: string;
+    placeholder: string;
+    submit: string;
+    success: string;
+  };
 }
 
 export interface FooterColumn {
