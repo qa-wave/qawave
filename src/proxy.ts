@@ -8,5 +8,5 @@ export const config = {
   //  - /api/*             (API routes stay locale-free)
   //  - /_next/*, /_vercel/* (framework internals)
   //  - files with extensions (favicon, og-image, sitemap, etc.)
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|admin|_next|_vercel|.*\\..*).*)"],
 };
