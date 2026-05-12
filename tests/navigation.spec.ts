@@ -10,7 +10,8 @@ test.describe("Navigation", () => {
     await expect(nav.getByText("QAWave")).toBeVisible();
 
     // Nav links (desktop)
-    await expect(nav.getByRole("link", { name: "Product" })).toBeVisible();
+    await expect(nav.getByRole("link", { name: "Product", exact: true })).toBeVisible();
+    await expect(nav.getByRole("link", { name: "Products" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Customers" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Blog" })).toBeVisible();
 

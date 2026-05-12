@@ -31,6 +31,7 @@ export const cs: Messages = {
   nav: {
     links: [
       { label: "Produkt", href: "/product" },
+      { label: "Produkty", href: "/products" },
       { label: "Zákazníci", href: "/customers" },
       { label: "Blog", href: "/blog" },
     ],
@@ -333,6 +334,7 @@ export const cs: Messages = {
         title: "Produkt",
         links: [
           { label: "Funkce", href: "/product" },
+          { label: "Produkty", href: "/products" },
           { label: "Integrace", href: "/product#integrations" },
         ],
       },
@@ -641,6 +643,53 @@ export const cs: Messages = {
           "## Vyzkoušejte to",
           "Pokud vás zajímá, jak se to aplikuje na váš stack, domluvte si 20minutový hovor. Žádná prodejní prezentace. Jen váš QA problém, můj upřímný pohled a zjištění, jestli vám naši agenti mohou pomoct.",
         ],
+      },
+    ],
+  },
+
+  // ----------------------------------------------------------
+  // Products page
+  // ----------------------------------------------------------
+  productsPage: {
+    headline: "Produkty",
+    subheadline:
+      "Open-source nástroje a platformy od QAWave. Stejná engineering kvalita, kterou přinášíme do našich agentních služeb.",
+    products: [
+      {
+        slug: "theridion",
+        name: "Theridion",
+        tagline: "Moderní platforma pro API testování",
+        description:
+          "Open-source desktopová aplikace pro celý API lifecycle — REST, GraphQL, gRPC a SOAP. Funkční testování, kontraktní testování, zátěžové testování a bezpečnostní skenování v jednom nástroji. Souborové projekty, git-friendly, keyboard-first.",
+        status: "Pre-alpha",
+        stack: ["Tauri", "React", "TypeScript", "Python", "FastAPI"],
+        features: [
+          "REST, GraphQL, gRPC a SOAP v jednom nástroji",
+          "Vestavěné zátěžové testování (Locust) a bezpečnostní skenování (ZAP)",
+          "Souborové projekty — žijí ve vašem Git repozitáři",
+          "Nativní desktopová aplikace pro macOS, Linux, Windows",
+          "Monaco editor s substitucí proměnných",
+          "Open source, žádná telemetrie, žádný lock-in",
+        ],
+        cta: { label: "Zobrazit na GitHubu", href: "https://github.com/qawave/theridion" },
+      },
+      {
+        slug: "zornik",
+        name: "Zorník",
+        tagline: "SDLC monitoring dashboard",
+        description:
+          "White-label dashboard, který sjednocuje signály z verzování, CI/CD, testů, releasů, observability a feedbacku do jednoho pohledu. Postaveno pro vývojáře, PM, testery i koncové uživatele. Role-based přístup, real-time stav všech prostředí.",
+        status: "Pilot",
+        stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind", "Radix UI"],
+        features: [
+          "Sjednocený pohled na všechny SDLC signály",
+          "Čtyři dashboardy: vývojář, PM, tester, koncový uživatel",
+          "Real-time monitoring stavu prostředí",
+          "Role-based přístup (viewer / admin)",
+          "White-label ready pro enterprise zákazníky",
+          "Nasaditelný na Vercel nebo self-hosted",
+        ],
+        cta: { label: "Požádat o demo", href: "/book" },
       },
     ],
   },

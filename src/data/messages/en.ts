@@ -30,6 +30,7 @@ export const en: Messages = {
   nav: {
     links: [
       { label: "Product", href: "/product" },
+      { label: "Products", href: "/products" },
       { label: "Customers", href: "/customers" },
       { label: "Blog", href: "/blog" },
     ],
@@ -330,6 +331,7 @@ export const en: Messages = {
         title: "Product",
         links: [
           { label: "Features", href: "/product" },
+          { label: "Products", href: "/products" },
           { label: "Integrations", href: "/product#integrations" },
         ],
       },
@@ -637,6 +639,53 @@ export const en: Messages = {
           "## Try it",
           "If you're curious how this applies to your stack, book a 20-minute call. No pitch deck. Just your QA pain, my honest perspective, and whether our agents can help.",
         ],
+      },
+    ],
+  },
+
+  // ----------------------------------------------------------
+  // Products page
+  // ----------------------------------------------------------
+  productsPage: {
+    headline: "Products",
+    subheadline:
+      "Open-source tools and platforms built by QAWave. Same engineering rigor we bring to our agent services.",
+    products: [
+      {
+        slug: "theridion",
+        name: "Theridion",
+        tagline: "Modern API testing platform",
+        description:
+          "Open-source, multiplatform desktop app for the full API lifecycle — REST, GraphQL, gRPC, and SOAP. Functional testing, contract testing, load testing, and security scanning in one tool. File-based projects, git-friendly, keyboard-first.",
+        status: "Pre-alpha",
+        stack: ["Tauri", "React", "TypeScript", "Python", "FastAPI"],
+        features: [
+          "REST, GraphQL, gRPC, and SOAP in one tool",
+          "Built-in load testing (Locust) and security scanning (ZAP)",
+          "File-based projects — lives in your Git repo",
+          "Native desktop app for macOS, Linux, Windows",
+          "Monaco editor with variable substitution",
+          "Open source, no telemetry, no lock-in",
+        ],
+        cta: { label: "View on GitHub", href: "https://github.com/qawave/theridion" },
+      },
+      {
+        slug: "zornik",
+        name: "Zornik",
+        tagline: "SDLC monitoring dashboard",
+        description:
+          "White-label dashboard that unifies signals from version control, CI/CD, tests, releases, observability, and feedback into one view. Built for developers, PMs, testers, and end users. Role-based access, real-time status across all your environments.",
+        status: "Pilot",
+        stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind", "Radix UI"],
+        features: [
+          "Unified view across all SDLC signals",
+          "Four dashboards: developer, PM, tester, end user",
+          "Real-time environment status monitoring",
+          "Role-based access (viewer / admin)",
+          "White-label ready for enterprise customers",
+          "Deployable on Vercel or self-hosted",
+        ],
+        cta: { label: "Request demo", href: "/book" },
       },
     ],
   },

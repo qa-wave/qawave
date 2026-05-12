@@ -280,6 +280,23 @@ export interface LegalMessages {
   security: LegalDocument;
 }
 
+export interface ProductItem {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  status: string;
+  stack: string[];
+  features: string[];
+  cta: CtaLink;
+}
+
+export interface ProductsPageMessages {
+  headline: string;
+  subheadline: string;
+  products: ProductItem[];
+}
+
 // -------------------------------------------------------
 // Root type — must be satisfied by both en.ts and cs.ts
 // -------------------------------------------------------
@@ -305,5 +322,6 @@ export interface Messages {
   careersPage: CareersPageMessages;
   bookPage: BookPageMessages;
   blogPage: BlogPageMessages;
+  productsPage: ProductsPageMessages;
   legal: LegalMessages;
 }

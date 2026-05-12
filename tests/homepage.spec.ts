@@ -58,7 +58,7 @@ test.describe("Homepage — EN", () => {
 
   test("footer renders all columns", async ({ page }) => {
     const footer = page.locator("footer");
-    await expect(footer.getByText("Product")).toBeVisible();
+    await expect(footer.getByText("Product", { exact: true })).toBeVisible();
     await expect(footer.getByText("Company")).toBeVisible();
     await expect(footer.getByText("Legal")).toBeVisible();
     await expect(footer.getByText("Connect")).toBeVisible();

@@ -6,6 +6,7 @@ const LOCALES = ["en", "cs"] as const;
 const pages = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
   { path: "/product", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/products", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/customers", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/careers", priority: 0.5, changeFrequency: "monthly" as const },
