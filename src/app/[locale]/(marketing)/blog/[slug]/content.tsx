@@ -106,7 +106,7 @@ export default function BlogPostPage() {
           </nav>
         )}
 
-        <div className="mt-12 space-y-5">
+        <div className="mt-12 space-y-6 md:space-y-5">
           {post.body.map((paragraph, i) => {
             if (paragraph.startsWith("## ")) {
               const text = paragraph.slice(3);
@@ -115,7 +115,7 @@ export default function BlogPostPage() {
                 <h2
                   key={i}
                   id={id}
-                  className="mt-12 scroll-mt-24 text-xl font-semibold tracking-tight text-foreground md:text-2xl"
+                  className="mt-14 scroll-mt-24 text-xl font-semibold tracking-tight text-foreground md:mt-12 md:text-2xl"
                 >
                   {text}
                 </h2>
@@ -138,7 +138,7 @@ export default function BlogPostPage() {
             return (
               <p
                 key={i}
-                className="text-base leading-relaxed text-neutral-300"
+                className="text-[15px] leading-7 text-neutral-300 md:text-base md:leading-relaxed"
               >
                 {paragraph}
               </p>

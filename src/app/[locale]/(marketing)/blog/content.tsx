@@ -12,7 +12,7 @@ export default function BlogPage() {
   const posts = t.raw("posts") as BlogPost[];
 
   return (
-    <section className="pb-24 pt-32 md:pb-32 md:pt-40">
+    <section className="pb-16 pt-32 md:pb-32 md:pt-40">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.h1
           variants={fadeInUp}

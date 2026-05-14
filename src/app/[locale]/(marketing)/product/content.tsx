@@ -176,7 +176,7 @@ export default function ProductPage() {
                           {codeLabels[idx]}
                         </span>
                       </div>
-                      <pre className="overflow-x-auto p-4 text-[13px] leading-relaxed text-neutral-300">
+                      <pre className="overflow-x-auto p-3 text-[11px] leading-relaxed text-neutral-300 md:p-4 md:text-[13px]">
                         <code>{codeBlocks[idx]}</code>
                       </pre>
                     </div>

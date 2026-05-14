@@ -60,17 +60,17 @@ export function ComparisonSection() {
           animate="visible" 
           className="mx-auto mt-14 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-surface/60 md:mt-20"
         >
-          <table className="w-full min-w-[640px] text-left">
+          <table className="w-full min-w-[520px] text-left">
             <thead>
               <tr className="border-b border-border">
-                <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest text-neutral-400">
+                <th className="px-3 py-3 text-[10px] font-medium uppercase tracking-widest text-neutral-400 md:px-6 md:py-4 md:text-xs">
                   &nbsp;
                 </th>
                 {columns.map((col, i) => (
                   <th
                     key={col}
                     className={cn(
-                      "px-6 py-4 text-center text-sm font-semibold tracking-tight",
+                      "px-3 py-3 text-center text-xs font-semibold tracking-tight md:px-6 md:py-4 md:text-sm",
                       i === 0 ? "text-accent" : "text-neutral-400"
                     )}
                   >
@@ -90,14 +90,14 @@ export function ComparisonSection() {
                 >
                   <th
                     scope="row"
-                    className="px-6 py-4 text-sm font-medium text-foreground"
+                    className="px-3 py-3 text-xs font-medium text-foreground md:px-6 md:py-4 md:text-sm"
                   >
                     {row.feature}
                   </th>
                   {row.values.map((value, vIdx) => (
                     <td
                       key={`${row.feature}-${vIdx}`}
-                      className="px-6 py-4 text-center"
+                      className="px-3 py-3 text-center md:px-6 md:py-4"
                     >
                       <ValueCell value={value} />
                     </td>
