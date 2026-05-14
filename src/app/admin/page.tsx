@@ -54,7 +54,9 @@ export default function AdminPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(`/api/admin?pwd=${encodeURIComponent(pwd)}`);
+      const res = await fetch("/api/admin", {
+        headers: { Authorization: `Bearer ${pwd}` },
+      });
       if (res.status === 401) {
         setError("Wrong password");
         setAuthed(false);
@@ -71,16 +73,10 @@ export default function AdminPage() {
   }, []);
 
   useEffect(() => {
-    const saved = sessionStorage.getItem("admin-pwd");
-    if (saved) {
-      setPassword(saved);
-      fetchData(saved);
-    }
   }, [fetchData]);
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    sessionStorage.setItem("admin-pwd", password);
     fetchData(password);
   }
 

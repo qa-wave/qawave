@@ -1,7 +1,7 @@
 const VERCEL_TOKEN = process.env.VERCEL_API_TOKEN ?? "";
 const PROJECT_ID = "prj_qR7Fg3fMEB7rwYYiTY9rLKYSpDlH";
 const TEAM_ID = "team_uVlMvMQ4WwYeNbcPHUkQb9vc";
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "qawave2026";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 async function vercelFetch(path: string) {
   const res = await fetch(
@@ -16,8 +16,11 @@ async function vercelFetch(path: string) {
 }
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const pwd = searchParams.get("pwd");
+  if (!ADMIN_PASSWORD) {
+    return Response.json({ error: "ADMIN_PASSWORD not configured" }, { status: 500 });
+  }
+
+  const pwd = request.headers.get("authorization")?.replace("Bearer ", "");
 
   if (pwd !== ADMIN_PASSWORD) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });

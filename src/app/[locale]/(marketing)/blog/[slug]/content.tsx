@@ -121,18 +121,21 @@ export default function BlogPostPage() {
                 </h2>
               );
             }
-            if (paragraph.startsWith("**")) {
+            if (paragraph.includes("**")) {
+              const parts = paragraph.split(/\*\*([^*]+)\*\*/g);
               return (
                 <p
                   key={i}
                   className="text-base leading-relaxed text-neutral-300"
-                  dangerouslySetInnerHTML={{
-                    __html: paragraph.replace(
-                      /\*\*([^*]+)\*\*/g,
-                      "<strong class='text-foreground'>$1</strong>"
-                    ),
-                  }}
-                />
+                >
+                  {parts.map((part, j) =>
+                    j % 2 === 1 ? (
+                      <strong key={j} className="text-foreground">{part}</strong>
+                    ) : (
+                      part
+                    )
+                  )}
+                </p>
               );
             }
             return (

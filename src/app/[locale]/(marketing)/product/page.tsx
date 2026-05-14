@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { localeAlternates } from "@/lib/seo";
 import ProductContent from "./content";
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     "Playwright agent",
     "QA automation agent",
   ],
+  alternates: localeAlternates("/product"),
 };
 
 export default function ProductPage() {
