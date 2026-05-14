@@ -33,8 +33,8 @@ export function PricingTeaserSection() {
         <motion.h2
           id="pricing-heading"
           variants={fadeInUp}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           {t("headline")}
@@ -42,19 +42,19 @@ export function PricingTeaserSection() {
 
         <motion.ul
           variants={staggerContainer(0.15)}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >
           {tiers.map((tier, i) => {
-            const isMiddle = i === 0;
+            const isFeatured = i === 0;
             return (
               <motion.li
                 key={tier.id}
                 variants={fadeInUp}
                 className={cn(
                   "relative flex flex-col rounded-2xl border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 md:p-8",
-                  isMiddle
+                  isFeatured
                     ? "border-border-accent shadow-[0_0_40px_rgba(14,165,233,0.12)]"
                     : "border-border hover:border-border-accent hover:shadow-[0_0_30px_rgba(14,165,233,0.08)]"
                 )}
@@ -79,7 +79,7 @@ export function PricingTeaserSection() {
                 </p>
                 <div className="mt-auto pt-6">
                   <Button
-                    variant={isMiddle ? "primary" : "secondary"}
+                    variant={isFeatured ? "primary" : "secondary"}
                     size="sm"
                     href={tier.cta.href}
                     className="w-full"

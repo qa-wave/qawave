@@ -29,8 +29,8 @@ export function ProblemSection() {
         <motion.h2
           id="problem-heading"
           variants={fadeInUp}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           {t("headline")}
@@ -38,8 +38,8 @@ export function ProblemSection() {
 
         <motion.ul
           variants={staggerContainer(0.15)}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >
           {stats.map((stat) => {
@@ -72,8 +72,8 @@ export function ProblemSection() {
 
         <motion.p
           variants={fadeInUp}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto mt-14 max-w-2xl text-center text-base leading-relaxed text-neutral-400 md:text-lg"
         >
           {t("closingLine")}

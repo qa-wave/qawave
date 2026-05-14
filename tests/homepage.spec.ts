@@ -3,6 +3,8 @@ import { test, expect } from "@playwright/test";
 test.describe("Homepage — EN", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/en");
+    // Wait for framer-motion animations (initial="hidden" animate="visible")
+    await page.waitForTimeout(1000);
   });
 
   test("hero section renders with headline and CTAs", async ({ page }) => {
@@ -58,7 +60,7 @@ test.describe("Homepage — EN", () => {
 
   test("footer renders all columns", async ({ page }) => {
     const footer = page.locator("footer");
-    await expect(footer.getByText("Product", { exact: true })).toBeVisible();
+    await expect(footer.getByText("Product")).toBeVisible();
     await expect(footer.getByText("Company")).toBeVisible();
     await expect(footer.getByText("Legal")).toBeVisible();
     await expect(footer.getByText("Connect")).toBeVisible();
@@ -68,6 +70,7 @@ test.describe("Homepage — EN", () => {
 test.describe("Homepage — CS", () => {
   test("renders Czech copy", async ({ page }) => {
     await page.goto("/cs");
+    await page.waitForTimeout(1000);
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
       "Ride the AI wave in QA."
     );

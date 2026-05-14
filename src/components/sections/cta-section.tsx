@@ -33,7 +33,7 @@ export function CtaSection() {
 
   return (
     <section
-      className="relative overflow-hidden py-32 md:py-40 lg:py-48"
+      className="relative overflow-hidden py-24 md:py-32 lg:py-40"
       aria-labelledby="final-cta-heading"
     >
       <div
@@ -46,6 +46,7 @@ export function CtaSection() {
       />
       <motion.div
         variants={fadeInUp}
+        initial="hidden"
         animate="visible"
         className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8"
       >
@@ -94,7 +95,7 @@ export function CtaSection() {
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-surface-overlay focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <Send className="h-3.5 w-3.5" aria-hidden="true" />
                 {t("newsletter.submit")}

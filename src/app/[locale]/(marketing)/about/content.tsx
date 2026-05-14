@@ -70,7 +70,7 @@ export default function AboutPage() {
               <motion.div
                 key={value.title}
                 variants={fadeInUp}
-                className="rounded-xl border border-border bg-surface p-6 md:p-8"
+                className="rounded-2xl border border-border bg-surface p-6 md:p-8"
               >
                 <h3 className="text-lg font-medium text-foreground">
                   {value.title}

@@ -67,7 +67,7 @@ export default function CareersPage() {
               <motion.div
                 key={role.title}
                 variants={fadeInUp}
-                className="rounded-xl border border-border bg-background p-6"
+                className="rounded-2xl border border-border bg-surface p-6"
               >
                 <div className="mb-3 flex items-center gap-2">
                   <Bot

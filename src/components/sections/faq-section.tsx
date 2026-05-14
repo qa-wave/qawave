@@ -26,7 +26,7 @@ export function FaqSection() {
           {t("headline")}
         </h2>
 
-        <ul className="mt-14 divide-y divide-border rounded-2xl border border-border bg-surface/60 md:mt-16">
+        <ul className="mt-14 divide-y divide-border rounded-2xl border border-border bg-surface md:mt-16">
           {items.map((item, i) => {
             const open = openIdx === i;
             return (

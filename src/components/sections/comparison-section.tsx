@@ -47,8 +47,8 @@ export function ComparisonSection() {
         <motion.h2
           id="comparison-heading"
           variants={fadeInUp}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           {t("headline")}
@@ -56,9 +56,9 @@ export function ComparisonSection() {
 
         <motion.div
           variants={fadeInUp}
-          
-          animate="visible" 
-          className="mx-auto mt-14 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-surface/60 md:mt-20"
+          initial="hidden"
+          animate="visible"
+          className="mx-auto mt-14 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-surface md:mt-20"
         >
           <table className="w-full min-w-[520px] text-left">
             <thead>
@@ -85,7 +85,7 @@ export function ComparisonSection() {
                   key={row.feature}
                   className={cn(
                     "border-b border-border last:border-0",
-                    rIdx % 2 === 1 && "bg-surface/40"
+                    rIdx % 2 === 1 && "bg-surface"
                   )}
                 >
                   <th

@@ -30,8 +30,8 @@ export const cs: Messages = {
   // ----------------------------------------------------------
   nav: {
     links: [
-      { label: "Produkt", href: "/product" },
-      { label: "Produkty", href: "/products" },
+      { label: "Platforma", href: "/product" },
+      { label: "Open Source", href: "/products" },
       { label: "Zákazníci", href: "/customers" },
       { label: "Blog", href: "/blog" },
     ],
@@ -83,7 +83,7 @@ export const cs: Messages = {
         unit: "/ vývojář / týden",
         label: "ztracených kvůli flaky testům",
         supporting:
-          "Průmyslový průměr. V týmu 100 vývojářů to odpovídá přibližně $500k/rok ztracené kapacity.",
+          "Průmyslový průměr dle DORA State of DevOps Report 2024. V týmu 100 vývojářů to odpovídá přibližně $500k/rok ztracené kapacity.",
       },
       {
         icon: "CircleDollarSign",
@@ -99,7 +99,7 @@ export const cs: Messages = {
         unit: "nábor",
         label: "na jednoho Senior SDET",
         supporting:
-          "A až ho najdete, tráví přibližně 50 % času údržbou frameworků místo psaním nového pokrytí.",
+          "Na základě dat z LinkedIn a interních benchmarků. A až ho najdete, tráví přibližně 50 % času údržbou frameworků místo psaním nového pokrytí.",
       },
     ],
     closingLine: "Pokud vám to zní povědomě, pojďme si promluvit.",
@@ -333,8 +333,8 @@ export const cs: Messages = {
       {
         title: "Produkt",
         links: [
-          { label: "Funkce", href: "/product" },
-          { label: "Produkty", href: "/products" },
+          { label: "Platforma", href: "/product" },
+          { label: "Open Source", href: "/products" },
           { label: "Integrace", href: "/product#integrations" },
         ],
       },
@@ -368,7 +368,7 @@ export const cs: Messages = {
         ],
       },
     ],
-    copyright: "© 2026 QAWave s.r.o. · Made in Prague · Postaveno na AI",
+    copyright: "© 2026 QAWave s.r.o. · Made in Prague · Built on AI",
     legalNote: "Registrace probíhá",
   },
 

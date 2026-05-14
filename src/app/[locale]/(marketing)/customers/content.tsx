@@ -35,7 +35,7 @@ export default function CustomersPage() {
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          className="mt-16 rounded-xl border border-border bg-surface p-8 md:p-10"
+          className="mt-16 rounded-2xl border border-border bg-surface p-8 md:p-10"
         >
           <h2 className="text-xl font-medium text-foreground">
             {t("emptyState.title")}

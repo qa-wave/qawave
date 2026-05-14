@@ -70,7 +70,7 @@ export default function BlogPostPage() {
 
         <motion.header variants={fadeInUp} initial="hidden" animate="visible">
           <div className="flex items-center gap-3 text-sm text-neutral-500">
-            <time>{post.date}</time>
+            <time dateTime="2026-05-10">{post.date}</time>
             <span aria-hidden="true">·</span>
             <span>{post.readingTime}</span>
           </div>
@@ -150,9 +150,9 @@ export default function BlogPostPage() {
         </div>
 
         <div className="mt-16 border-t border-border pt-10 text-center">
-          <Button variant="primary" size="lg" href="/book">
+          <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 text-base font-medium text-white shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all hover:shadow-[0_0_30px_rgba(14,165,233,0.5)]">
             Book a 20-min call
-          </Button>
+          </Link>
         </div>
       </div>
     </article>

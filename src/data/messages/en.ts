@@ -29,8 +29,8 @@ export const en: Messages = {
   // ----------------------------------------------------------
   nav: {
     links: [
-      { label: "Product", href: "/product" },
-      { label: "Products", href: "/products" },
+      { label: "Platform", href: "/product" },
+      { label: "Open Source", href: "/products" },
       { label: "Customers", href: "/customers" },
       { label: "Blog", href: "/blog" },
     ],
@@ -81,7 +81,7 @@ export const en: Messages = {
         unit: "/ engineer / week",
         label: "lost to flaky tests",
         supporting:
-          "Industry average. On a 100-engineer team, that compounds to ~$500k/yr in lost capacity.",
+          "Industry average per DORA State of DevOps Report 2024. On a 100-engineer team, that compounds to ~$500k/yr in lost capacity.",
       },
       {
         icon: "CircleDollarSign",
@@ -97,7 +97,7 @@ export const en: Messages = {
         unit: "hiring cycle",
         label: "for a Senior SDET",
         supporting:
-          "When you finally hire, they spend ~50% of their time on framework maintenance rather than new coverage.",
+          "Based on LinkedIn hiring data and internal benchmarks. When you finally hire, they spend ~50% of their time on framework maintenance rather than new coverage.",
       },
     ],
     closingLine: "If any of this sounds familiar, let's talk.",
@@ -330,8 +330,8 @@ export const en: Messages = {
       {
         title: "Product",
         links: [
-          { label: "Features", href: "/product" },
-          { label: "Products", href: "/products" },
+          { label: "Platform", href: "/product" },
+          { label: "Open Source", href: "/products" },
           { label: "Integrations", href: "/product#integrations" },
         ],
       },
@@ -365,7 +365,7 @@ export const en: Messages = {
         ],
       },
     ],
-    copyright: "© 2026 QAWave s.r.o. · Made in Prague · Built on AI, for AI teams",
+    copyright: "© 2026 QAWave s.r.o. · Made in Prague · Built on AI",
     legalNote: "Registration pending",
   },
 

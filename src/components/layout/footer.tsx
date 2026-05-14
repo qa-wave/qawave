@@ -16,7 +16,7 @@ export function Footer() {
   const columns = t.raw("columns") as FooterColumn[];
 
   return (
-    <footer className="border-t border-border bg-surface/60">
+    <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20 lg:px-8">
         <div className="mb-12 flex flex-col items-start justify-between gap-8 md:flex-row">
           <div>

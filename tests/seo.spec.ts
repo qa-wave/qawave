@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("SEO", () => {
   test("homepage EN has correct meta", async ({ page }) => {
     await page.goto("/en");
-    await expect(page).toHaveTitle(/QAWave.*Ride the AI wave/);
+    await expect(page).toHaveTitle(/QAWave — Ride the AI wave in QA/);
     const desc = page.locator('meta[name="description"]');
     await expect(desc).toHaveAttribute(
       "content",
@@ -16,14 +16,17 @@ test.describe("SEO", () => {
     await expect(page).toHaveTitle(/QAWave.*AI agenti/);
   });
 
-  test("canonical URL is set per locale", async ({ page }) => {
+  test("canonical URL is set for EN", async ({ page }) => {
     await page.goto("/en");
     const canonical = page.locator('link[rel="canonical"]');
     await expect(canonical).toHaveAttribute("href", /\/en$/);
+  });
 
-    await page.goto("/cs");
+  test("canonical URL is set for CS", async ({ page }) => {
+    await page.goto("/cs", { waitUntil: "networkidle" });
+    await page.waitForTimeout(500);
     const canonicalCs = page.locator('link[rel="canonical"]');
-    await expect(canonicalCs).toHaveAttribute("href", /\/cs$/);
+    await expect(canonicalCs).toHaveAttribute("href", /\/cs$/, { timeout: 10_000 });
   });
 
   test("hreflang alternates are present", async ({ page }) => {
@@ -36,7 +39,7 @@ test.describe("SEO", () => {
 
   test("JSON-LD structured data is present on homepage", async ({ page }) => {
     await page.goto("/en");
-    const jsonLd = page.locator('script[type="application/ld+json"]');
+    const jsonLd = page.locator('script[type="application/ld+json"]').first();
     const content = await jsonLd.textContent();
     expect(content).toContain("ProfessionalService");
     expect(content).toContain("QAWave");

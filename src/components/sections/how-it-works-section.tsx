@@ -29,14 +29,14 @@ export function HowItWorksSection() {
 
   return (
     <section
-      className="relative bg-surface/40 py-24 md:py-32 lg:py-40"
+      className="relative bg-surface py-24 md:py-32 lg:py-40"
       aria-labelledby="how-it-works-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeInUp}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mx-auto max-w-3xl text-center"
         >
           <h2
@@ -52,8 +52,8 @@ export function HowItWorksSection() {
 
         <motion.ul
           variants={staggerContainer(0.2)}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
           className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >
           {pillars.map((pillar) => {

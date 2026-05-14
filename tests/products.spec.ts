@@ -4,7 +4,7 @@ test.describe("Products page", () => {
   test("EN renders both products", async ({ page }) => {
     const response = await page.goto("/en/products");
     expect(response?.status()).toBe(200);
-    await expect(page).toHaveTitle(/Products.*QAWave/);
+    await expect(page).toHaveTitle(/Open Source.*QAWave|QAWave.*Open Source|Products.*QAWave/);
 
     await expect(
       page.getByRole("heading", { name: "Theridion" })
@@ -51,10 +51,10 @@ test.describe("Products page", () => {
     await expect(demoLink).toBeVisible();
   });
 
-  test("nav contains Products link", async ({ page }) => {
+  test("nav contains Open Source link", async ({ page }) => {
     await page.goto("/en");
     await expect(
-      page.locator("header").getByRole("link", { name: "Products" })
+      page.locator("header").getByRole("link", { name: "Open Source" })
     ).toBeVisible();
   });
 });

@@ -10,8 +10,8 @@ test.describe("Navigation", () => {
     await expect(nav.getByText("QAWave")).toBeVisible();
 
     // Nav links (desktop)
-    await expect(nav.getByRole("link", { name: "Product", exact: true })).toBeVisible();
-    await expect(nav.getByRole("link", { name: "Products" })).toBeVisible();
+    await expect(nav.getByRole("link", { name: "Platform", exact: true })).toBeVisible();
+    await expect(nav.getByRole("link", { name: "Open Source" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Customers" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Blog" })).toBeVisible();
 
@@ -39,7 +39,7 @@ test.describe("Navigation", () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
 
-    await expect(page.getByRole("link", { name: "Product" }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Platform" }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Blog" }).first()).toBeVisible();
   });
 });

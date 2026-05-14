@@ -27,8 +27,8 @@ export function AgenticMoatSection() {
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeInUp}
-          
-          animate="visible" 
+          initial="hidden"
+          animate="visible"
         >
           <h2
             id="agentic-moat-heading"
