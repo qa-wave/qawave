@@ -42,7 +42,7 @@ test.describe("Homepage — EN", () => {
   });
 
   test("agentic moat section renders stat", async ({ page }) => {
-    await expect(page.getByText("40 agents. 1 founder.")).toBeVisible();
+    await expect(page.getByText("We don't just build agents")).toBeVisible();
   });
 
   test("FAQ accordion expands on click", async ({ page }) => {
