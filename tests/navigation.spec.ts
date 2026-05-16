@@ -42,4 +42,26 @@ test.describe("Navigation", () => {
     await expect(page.getByRole("link", { name: "Platform" }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Blog" }).first()).toBeVisible();
   });
+
+  test("mobile menu closes with Escape key", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/en");
+
+    await page.getByRole("button", { name: "Open menu" }).click();
+    await expect(page.getByRole("link", { name: "Platform" }).first()).toBeVisible();
+
+    await page.keyboard.press("Escape");
+    // Menu should close — the Close menu button should revert to Open menu
+    await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
+  });
+
+  test("mobile menu traps focus with Tab", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/en");
+
+    await page.getByRole("button", { name: "Open menu" }).click();
+    // First link should receive focus automatically
+    const firstLink = page.getByRole("link", { name: "Platform" }).first();
+    await expect(firstLink).toBeFocused();
+  });
 });

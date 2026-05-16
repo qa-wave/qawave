@@ -18,7 +18,7 @@ test.describe("Homepage — EN", () => {
 
   test("built-with section shows partner logos", async ({ page }) => {
     for (const name of ["Anthropic", "Vercel", "Supabase", "Cloudflare", "Stripe"]) {
-      await expect(page.getByLabel(name)).toBeVisible();
+      await expect(page.getByRole("listitem", { name }).first()).toBeVisible();
     }
   });
 
@@ -56,6 +56,15 @@ test.describe("Homepage — EN", () => {
   test("final CTA section has newsletter form", async ({ page }) => {
     await expect(page.getByText("Ready to stop fighting flaky tests?")).toBeVisible();
     await expect(page.getByPlaceholder("Work email")).toBeVisible();
+  });
+
+  test("newsletter form validates email input", async ({ page }) => {
+    const emailInput = page.getByPlaceholder("Work email");
+    const submitBtn = page.locator('section[aria-labelledby="final-cta-heading"] button[type="submit"]');
+
+    // Empty submit should not succeed (HTML5 required validation)
+    await submitBtn.click();
+    await expect(emailInput).toBeVisible(); // still on form, not success
   });
 
   test("footer renders all columns", async ({ page }) => {
