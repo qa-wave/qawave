@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Check, Minus, X, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { fadeInUp } from "@/lib/motion";
@@ -17,21 +17,21 @@ interface Row {
 function ValueCell({ value }: { value: ComparisonValue }) {
   if (value === "yes") {
     return (
-      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent-muted text-accent">
-        <Check className="h-4 w-4" aria-label="yes" />
+      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent-muted text-accent" aria-label="yes">
+        <Check className="h-4 w-4" aria-hidden="true" />
       </span>
     );
   }
   if (value === "partial") {
     return (
-      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-warning/15 text-warning">
-        <Minus className="h-4 w-4" aria-label="partial" />
+      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-warning/15 text-warning" aria-label="partial">
+        <Minus className="h-4 w-4" aria-hidden="true" />
       </span>
     );
   }
   return (
-    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-error/15 text-error">
-      <X className="h-4 w-4" aria-label="no" />
+    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-error/15 text-error" aria-label="no">
+      <X className="h-4 w-4" aria-hidden="true" />
     </span>
   );
 }
@@ -40,6 +40,7 @@ export function ComparisonSection() {
   const t = useTranslations("comparison");
   const columns = t.raw("columns") as [string, string, string, string];
   const rows = t.raw("rows") as Row[];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className="relative py-24 md:py-32 lg:py-40" aria-labelledby="comparison-heading">
@@ -47,7 +48,7 @@ export function ComparisonSection() {
         <motion.h2
           id="comparison-heading"
           variants={fadeInUp}
-          initial="hidden"
+          initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
@@ -56,7 +57,7 @@ export function ComparisonSection() {
 
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
+          initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
           className="mx-auto mt-14 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-surface md:mt-20"
         >

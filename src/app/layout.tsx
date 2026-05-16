@@ -56,12 +56,15 @@ export const metadata: Metadata = {
     title: "QAWave — Ride the AI wave in QA",
     description:
       "Custom AI agents that live in your CI/CD. Generate tests, heal flakiness, triage bugs 24/7.",
+    url: siteUrl,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "QAWave — Ride the AI wave in QA",
     description:
       "Custom AI agents that live in your CI/CD. Generate tests, heal flakiness, triage bugs 24/7.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -75,9 +78,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "48x48" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/manifest.json",
 };
 
 const jsonLd = {

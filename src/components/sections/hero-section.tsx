@@ -212,7 +212,7 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <p className="mt-8 max-w-md text-sm text-neutral-500">
+          <p className="mt-8 max-w-md text-sm text-neutral-300">
             {t("trustPill")}
           </p>
         </div>

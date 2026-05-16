@@ -1,12 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { fadeInUp } from "@/lib/motion";
 
 export function AgenticMoatSection() {
   const t = useTranslations("agenticMoat");
   const paragraphs = t.raw("body") as string[];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section
@@ -25,7 +26,7 @@ export function AgenticMoatSection() {
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
+          initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
         >
           <h2

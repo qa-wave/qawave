@@ -634,7 +634,7 @@ export const cs: Messages = {
           "## Eval harness",
           "Jak řídíte 40 agentů bez ztráty kvality? Stejně jako řídíme QA agenty pro zákazníky: eval harnesy.",
           "Každý agent má dataset očekávaných chování. Blog Writer je například evaluován na: přesnost technických claimů (žádné halucinované benchmarky), soulad s brand voice (žádná zakázaná slova), strukturální kvalitu (jasná teze, podpůrné důkazy, akční závěr). Tyto evaly běží každou noc.",
-          "Když výstup agenta regresuje — řekněme, že Copywriter začne používat 'revoluční' (zakázané slovo v našich brand guidelines) — je to chyceno dřív, než se obsah dostane ke mně. Eval blokuje výstup a nahlásí ho.",
+          "Když výstup agenta regresuje — řekněme, že Copywriter začne používat 'vzrušující' (zakázané slovo v našich brand guidelines) — je to chyceno dřív, než se obsah dostane ke mně. Eval blokuje výstup a nahlásí ho.",
           "Tohle je identické s tím, jak naši QA agenti fungují pro zákazníky. Eval harness je produkt.",
           "## Proč to záleží pro váš QA tým",
           "Pokud 40 agentů dokáže řídit B2B firmu s reálnými zákazníky, reálnými quality bary a reálnými revenue targety — dokážou řídit i váš QA tým.",

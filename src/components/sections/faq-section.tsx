@@ -39,7 +39,7 @@ export function FaqSection() {
                   onClick={() => setOpenIdx(open ? null : i)}
                   className={cn(
                     "flex w-full items-start justify-between gap-6 px-5 py-5 text-left transition-colors md:px-6 md:py-6",
-                    "hover:bg-surface-raised/40 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-[-4px]"
+                    "hover:bg-surface-raised/40 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
                   )}
                 >
                   <span className="text-base font-medium text-foreground md:text-lg">

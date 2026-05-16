@@ -39,6 +39,7 @@ export function BuiltWithSection() {
               <li
                 key={name}
                 className="text-neutral-400 transition-colors hover:text-foreground"
+                aria-label={name}
               >
                 {Logo ? (
                   <Logo className="h-5 w-auto md:h-6" />

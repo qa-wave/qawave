@@ -19,16 +19,33 @@ export async function generateMetadata({
     alternates: localeAlternates("", locale),
   };
 }
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/hero-section";
 import { BuiltWithSection } from "@/components/sections/built-with-section";
-import { ProblemSection } from "@/components/sections/problem-section";
-import { HowItWorksSection } from "@/components/sections/how-it-works-section";
-import { ComparisonSection } from "@/components/sections/comparison-section";
-import { AgenticMoatSection } from "@/components/sections/agentic-moat-section";
-import { TestimonialSection } from "@/components/sections/testimonial-section";
-import { FaqSection } from "@/components/sections/faq-section";
-import { CtaSection } from "@/components/sections/cta-section";
 import { en } from "@/data/messages/en";
+
+// Below-fold sections: code-split to reduce initial JS bundle
+const ProblemSection = dynamic(
+  () => import("@/components/sections/problem-section"),
+);
+const HowItWorksSection = dynamic(
+  () => import("@/components/sections/how-it-works-section"),
+);
+const ComparisonSection = dynamic(
+  () => import("@/components/sections/comparison-section"),
+);
+const AgenticMoatSection = dynamic(
+  () => import("@/components/sections/agentic-moat-section"),
+);
+const TestimonialSection = dynamic(
+  () => import("@/components/sections/testimonial-section"),
+);
+const FaqSection = dynamic(
+  () => import("@/components/sections/faq-section"),
+);
+const CtaSection = dynamic(
+  () => import("@/components/sections/cta-section"),
+);
 
 export default async function HomePage({
   params,

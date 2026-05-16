@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,7 @@ interface Tier {
 export function PricingTeaserSection() {
   const t = useTranslations("pricing");
   const tiers = t.raw("tiers") as Tier[];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section
@@ -33,7 +34,7 @@ export function PricingTeaserSection() {
         <motion.h2
           id="pricing-heading"
           variants={fadeInUp}
-          initial="hidden"
+          initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
           className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
@@ -42,7 +43,7 @@ export function PricingTeaserSection() {
 
         <motion.ul
           variants={staggerContainer(0.15)}
-          initial="hidden"
+          initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
           className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8"
         >
@@ -71,7 +72,7 @@ export function PricingTeaserSection() {
                 <p className="mt-3 font-mono text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
                   {tier.price}
                 </p>
-                <p className="mt-1 text-xs uppercase tracking-widest text-neutral-500">
+                <p className="mt-1 text-xs uppercase tracking-widest text-neutral-300">
                   {tier.priceUnit} · {tier.duration}
                 </p>
                 <p className="mt-5 text-sm leading-relaxed text-neutral-400 md:text-base">

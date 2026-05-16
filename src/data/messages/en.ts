@@ -630,7 +630,7 @@ export const en: Messages = {
           "## The eval harness",
           "How do you manage 40 agents without losing quality? The same way we manage QA agents for customers: eval harnesses.",
           "Every agent has a dataset of expected behaviors. The Blog Writer, for example, is evaluated against: accurate technical claims (no hallucinated benchmarks), brand voice compliance (no banned words), structural quality (clear thesis, supporting evidence, actionable takeaway). These evals run nightly.",
-          "When an agent's output regresses — say the Copywriter starts using 'revolutionary' (a banned word in our brand guidelines) — it's caught before the content reaches me. The eval blocks the output and flags it.",
+          "When an agent's output regresses — say the Copywriter starts using 'exciting' (a banned word in our brand guidelines) — it's caught before the content reaches me. The eval blocks the output and flags it.",
           "This is identical to how our QA agents work for customers. The eval harness is the product.",
           "## Why this matters for your QA team",
           "If 40 agents can run a B2B company with real customers, real quality bars, and real revenue targets — they can run your QA team.",

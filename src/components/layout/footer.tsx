@@ -51,6 +51,7 @@ export function Footer() {
                           className="text-sm text-neutral-400 transition-colors hover:text-foreground"
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`${link.label} (opens in new window)`}
                         >
                           {link.label}
                         </a>
@@ -74,8 +75,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 md:flex-row md:items-center">
-          <p className="text-xs text-neutral-500">{t("copyright")}</p>
-          <p className="text-xs text-neutral-500">{t("legalNote")}</p>
+          <p className="text-xs text-neutral-400">{t("copyright")}</p>
+          <p className="text-xs text-neutral-400">{t("legalNote")}</p>
         </div>
       </div>
     </footer>

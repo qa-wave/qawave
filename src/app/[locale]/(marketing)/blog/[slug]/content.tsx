@@ -1,12 +1,6 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
-import { motion } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
-import { fadeInUp } from "@/lib/motion";
 import type { BlogPost } from "@/data/messages/types";
 
 function slugify(text: string): string {
@@ -16,11 +10,10 @@ function slugify(text: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
-export default function BlogPostPage() {
-  const t = useTranslations("blogPage");
-  const params = useParams<{ slug: string }>();
+export default async function BlogPostContent({ slug }: { slug: string }) {
+  const t = await getTranslations("blogPage");
   const posts = t.raw("posts") as BlogPost[];
-  const post = posts.find((p) => p.slug === params.slug);
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
@@ -30,9 +23,12 @@ export default function BlogPostPage() {
             Post not found.
           </h1>
           <div className="mt-8">
-            <Button variant="secondary" href="/blog">
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-border-accent"
+            >
               Back to blog
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -48,7 +44,7 @@ export default function BlogPostPage() {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    datePublished: "2026-05-10",
+    datePublished: post.date,
     author: { "@type": "Person", name: "Tomas Mertin" },
     publisher: { "@type": "Organization", name: "QAWave" },
   };
@@ -68,9 +64,9 @@ export default function BlogPostPage() {
           All posts
         </Link>
 
-        <motion.header variants={fadeInUp} initial="hidden" animate="visible">
-          <div className="flex items-center gap-3 text-sm text-neutral-500">
-            <time dateTime="2026-05-10">{post.date}</time>
+        <header>
+          <div className="flex items-center gap-3 text-sm text-neutral-400">
+            <time dateTime={post.date}>{post.date}</time>
             <span aria-hidden="true">·</span>
             <span>{post.readingTime}</span>
           </div>
@@ -80,7 +76,7 @@ export default function BlogPostPage() {
           <p className="mt-4 text-base text-neutral-400 md:text-lg">
             {post.excerpt}
           </p>
-        </motion.header>
+        </header>
 
         {/* Table of contents */}
         {headings.length > 0 && (
@@ -88,7 +84,7 @@ export default function BlogPostPage() {
             aria-label="Table of contents"
             className="mt-10 rounded-lg border border-border bg-surface/60 p-5"
           >
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-neutral-500">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-neutral-400">
               In this post
             </p>
             <ol className="space-y-1.5">

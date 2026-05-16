@@ -35,7 +35,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
               "focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2",
               active
                 ? "bg-accent text-white shadow-[0_0_12px_rgba(14,165,233,0.4)]"
-                : "text-neutral-400 hover:text-foreground"
+                : "text-neutral-300 hover:text-foreground"
             )}
           >
             {loc === "en" ? t("en") : t("cs")}

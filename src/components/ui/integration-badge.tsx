@@ -48,7 +48,7 @@ export function IntegrationBadge({
           <div className="w-6 h-6 md:w-7 md:h-7 rounded bg-neutral-700" />
         )}
       </div>
-      <span className="text-xs md:text-sm font-medium text-neutral-500 text-center transition-colors duration-300 group-hover:text-neutral-400">
+      <span className="text-xs md:text-sm font-medium text-neutral-300 text-center transition-colors duration-300 group-hover:text-neutral-200">
         {name}
       </span>
       <span className="sr-only">{description}</span>
